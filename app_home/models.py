@@ -1,9 +1,10 @@
 from django.db import models
+from django.urls import reverse
 
 
 class SocialLink(models.Model):
     link_name = models.CharField(max_length=100, blank=True, null=True, verbose_name="Название соц. сети")
-    link_slug = models.CharField(max_length=100, blank=True, null=True, verbose_name="Слаг ссылки")
+    link_slug = models.SlugField(unique=True, max_length=100, blank=True, null=True, verbose_name="Слаг ссылки (заполняется автоматически)")
     link_url = models.CharField(max_length=100, blank=True, null=True, verbose_name="Ссылка на соц. сеть")
 
     class Meta:
@@ -13,6 +14,9 @@ class SocialLink(models.Model):
 
     def __str__(self):
         return f"Ссылка: {self.link_name}"
+
+    def get_slug(self):
+        return self.link_slug
 
 
 class PhoneNumber(models.Model):
