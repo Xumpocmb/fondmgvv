@@ -3,6 +3,7 @@ from django.db import models
 
 class SocialLink(models.Model):
     link_name = models.CharField(max_length=100, blank=True, null=True, verbose_name="Название соц. сети")
+    link_slug = models.CharField(max_length=100, blank=True, null=True, verbose_name="Слаг ссылки")
     link_url = models.CharField(max_length=100, blank=True, null=True, verbose_name="Ссылка на соц. сеть")
 
     class Meta:
@@ -33,8 +34,8 @@ class SiteEmail(models.Model):
 
     class Meta:
         db_table = 'site_email'
-        verbose_name = 'email'
-        verbose_name_plural = 'emails'
+        verbose_name = 'Почта'
+        verbose_name_plural = 'Почты'
 
     def __str__(self):
         return f"Почта: {self.email_name}"
