@@ -1,0 +1,169 @@
+.club-news {
+  @include media-small-desctop {
+    padding: 0 10px 0 10px;
+  }
+
+  &__page-link {
+    display: flex;
+    align-items: end;
+    gap: 5px;
+  }
+
+  &__house {
+    @include media-small-desctop {
+      width: 25px;
+      height: 22px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__link {
+    @include font($height: 100%, $size: 25px, $weight: 500);
+    font-family: $third-family;
+    text-decoration: none;
+    color: rgba(34, 62, 76, 0.5);
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 500);
+    }
+  }
+
+  &__link-span {
+    @include font($height: 100%, $size: 25px, $weight: 500);
+    font-family: $third-family;
+    color: #223e4c;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 500);
+    }
+  }
+
+  &__main-title {
+    @include font($height: 100%, $size: 30px, $weight: 600);
+    font-family: $third-family;
+    color: #223e4c;
+    text-align: center;
+    margin-top: 30px;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 16px, $weight: 600);
+      margin-top: 9px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    @include media-small-desctop {
+      margin-top: 28px;
+    }
+  }
+
+  &__title-text {
+    @include font($height: 100%, $size: 30px, $weight: 600);
+    font-family: $third-family;
+    color: #328da2;
+    text-align: center;
+    margin: 0;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 18px, $weight: 600);
+    }
+  }
+
+  &__line {
+    @include media-small-desctop {
+      width: 147px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__p {
+    @include font($height: 100%, $size: 25px, $weight: 300);
+    font-family: $font-family;
+    color: #000;
+    text-align: center;
+    margin: 0;
+
+    @include media-small-desctop {
+      @include font($height: 110%, $size: 10px, $weight: 300);
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    margin-top: 27px;
+    height: 482px;
+    @include media-small-desctop {
+      width: 300px;
+      height: 178px;
+      margin-top: 9px;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__text {
+    margin: 50px 0 50px 0;
+    @include media-small-desctop {
+      margin: 16px 0 24px 0;
+    }
+  }
+
+  &__text-p {
+    @include font($height: 100%, $size: 24px, $weight: 400);
+    font-family: $font-family;
+    color: #333;
+    text-align: justify;
+    margin: 0;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 400);
+    }
+  }
+
+  &__text-span {
+    @include font($height: 100%, $size: 24px, $weight: 300);
+    font-family: $font-family;
+    font-style: italic;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 300);
+      font-style: italic;
+    }
+  }
+
+  &__img-blocks {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    justify-content: space-between;
+    gap: 10px;
+
+    @include media-small-desctop {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto;
+      height: 309px; /* Подстрой под размер изображений */
+      overflow: hidden;
+      justify-content: center;
+    }
+  }
+
+  &__img-block {
+    @include media-small-desctop {
+      width: 145px;
+      height: 96px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

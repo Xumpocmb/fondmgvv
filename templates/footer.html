@@ -1,0 +1,71 @@
+{% load static %}
+<footer class="footer">
+    <div class="footer__first-main-block">
+        <div class="footer__contacts-logo-unp">
+            <div class="footer__contacts-logo">
+                <div class="footer__logo-block">
+                    <img src="{% static 'img/big-logo.png' %}" alt="big-logo"/>
+                </div>
+                <div class="footer__contacts">
+                    <div class="footer__icon-row">
+                        <div class="footer__icon-contact">
+                            <img class="footer__icons" width="26" height="25" src="{% static 'img/phone.svg' %}" alt="phone"/>
+                            <a href="" data-copy="+375 44 732-64-55" class="footer__cont copy-to-clipboard">+375 44
+                                732-64-55</a>
+                        </div>
+                        <div class="footer__icon-contact">
+                            <img class="footer__icons" width="26" height="25" src="{% static 'img/mail.png' %}" alt="mail"/>
+                            <a href="" data-copy="mg-fond@yandex.by" class="footer__cont copy-to-clipboard"
+                               target="_blank">mg-fond@yandex.by</a>
+                        </div>
+                    </div>
+
+                    <div class="footer__icon-row footer__soc-row">
+                        <div class="footer__icon-contact">
+                            <a href="https://t.me/vpkvvrb"><img width="26" height="25" src="{% static 'img/telegram.svg' %}" alt="telegram" class="footer__soc-icons"/></a>
+                            <a href="https://t.me/vpkvvrb" class="footer__cont footer__telega" target="_blank">vpkvvrb</a>
+                        </div>
+                        <div class="footer__icon-contact">
+                            <a href="https://www.instagram.com/molodaya_gvardiya_vv?igsh=Z2ljdnkyM3c1M mtn">
+                                <img width="26" height="25" src="{% static 'img/instagram.svg' %}" alt="instagram" class="footer__soc-icons"/>
+                            </a>
+                            <a href="https://www.instagram.com/molodaya_gvardiya_vv?igsh=Z2ljdnkyM3c1M mtn "
+                               class="footer__cont footer__inst" target="_blank">molodaya_gvardiya_vv</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__unp">
+                <p class="footer__unp-text">УНП 805001111 Свидетельство о государственной регистрации Министерства
+                    юстиции Республики <br/>Беларусь от 04.06.2008 за № 0012</p>
+            </div>
+        </div>
+
+        <div class="footer__link-list-block">
+            <div class="footer__first-list">
+                <p class="footer__p">Фонд</p>
+                <ul class="footer__list">
+                    <li><a href="#project">О проекте</a></li>
+                    <li><a href="#clubs">Клубы</a></li>
+                    <li><a href="#news">Новости</a></li>
+                </ul>
+            </div>
+            <div class="second-list">
+                <p class="footer__p">Справка</p>
+                <ul class="footer__list">
+                    <li>
+                        <a href="document.html" target="_blank">Документация</a>
+                    </li>
+                    <li><a href="#news">Вопрос - ответ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer__second-main-block">
+        <hr id="line"/>
+        <div class="footer__second-block">
+            <p>© Все права защищены</p>
+            <p>Политика конфиденциальности</p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,216 @@
+.project {
+  padding: 56.39px 42px 0 42px;
+  @include media-small-desctop {
+    padding: 0 10px 0 10px;
+    margin-bottom: 30px;
+  }
+  &__title {
+    @include font($height: 100%, $size: 25px, $weight: 400);
+    font-family: $font-family;
+    text-transform: uppercase;
+    color: #328ca7;
+    margin: 0;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 300);
+    }
+  }
+
+  hr {
+    background-color: #328ca7;
+    height: 2px;
+    margin: 0;
+  }
+
+  &__main-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 30px;
+
+    @include media-small-desctop {
+      flex-direction: column;
+      align-items: start;
+      gap: 8px;
+    }
+  }
+
+  &__first-block {
+    display: flex;
+    flex-direction: column;
+    gap: 54px;
+  }
+
+  &__second-block {
+    display: flex;
+    flex-direction: column;
+    gap: 54px;
+  }
+
+  &__time {
+    @include font($height: 110%, $size: 35px, $weight: 400);
+    font-family: $third-family;
+    color: #333;
+    letter-spacing: 2px;
+    margin: 0;
+
+    @include media-small-desctop {
+      @include font($height: 110%, $size: 16px, $weight: 400);
+    }
+  }
+
+  &__p {
+    @include font($height: 100%, $size: 18px, $weight: 300);
+    font-family: $font-family;
+    color: #333;
+    margin: 0;
+
+    @include media-small-desctop {
+      display: none;
+    }
+  }
+
+  &__p2 {
+    @include font($height: 100%, $size: 25px, $weight: 300);
+    font-family: $font-family;
+    text-align: right;
+    color: #333;
+    margin: 0;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 300);
+    }
+  }
+
+  &__video-block {
+    width: 656px;
+    height: 438px;
+    border-radius: 54px;
+    margin: 40px auto;
+    overflow: hidden;
+    background: black;
+
+    @include media-small-desctop {
+      border-radius: 20px;
+      width: 241px;
+      height: 161px;
+    }
+  }
+
+  &__text {
+    @include font($height: 100%, $size: 24px, $weight: 300);
+    font-family: $font-family;
+    color: #333;
+    text-align: center;
+    margin: 0;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 300);
+    }
+  }
+
+  &__bold {
+    @include font($height: 100%, $size: 24px, $weight: 500);
+    font-family: $font-family;
+    color: #333;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 500);
+    }
+  }
+}
+
+.project__video-block {
+  position: relative;
+}
+
+.project__video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.project__video-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project__video-play-btn {
+  position: absolute;
+  cursor: pointer;
+  width: 100px;
+  height: 98px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+
+  @include media-small-desctop {
+    width: 45px;
+    height: 43px;
+  }
+}
+
+.project__video-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  text-align: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.project__video-link a {
+  color: white;
+  text-decoration: none;
+}
+
+.project__text-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project__more-text {
+  @include media-small-desctop {
+    display: block;
+    @include font($height: 100%, $size: 12px, $weight: 300);
+    @include media-small-desctop {
+      display: none;
+    }
+  }
+}
+
+.project__read-more {
+  @include font($height: 100%, $size: 12px, $weight: 300);
+  display: inline-block;
+  padding: 5px 10px;
+  color: #328ca7;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: none;
+  @include media-small-desctop {
+    display: block;
+  }
+}

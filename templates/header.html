@@ -1,0 +1,73 @@
+{% load static %}
+<header class="header">
+    <div class="header__contacts-block">
+        <div class="header__logo-address-block">
+            <div class="header__logo-block">
+                <img src="{% static 'img/logo.png' %}" alt="logo"/>
+            </div>
+        </div>
+        <div class="header__phone-soc-block">
+            <div class="header__phone-block">
+                <span class="header__call">Позвонить нам</span>
+                <span class="header__phone copy-to-clipboard" data-copy="+375 29 1112233">+375291112233</span>
+            </div>
+            <div class="header__soc-icons-block">
+                <div class="header__soc-icons">
+                    <a href="">
+                        <img src="{% static 'img/phone.svg' %}" alt="icon-phone" class="copy-to-clipboard"
+                             data-copy="+375291112233"/>
+                    </a>
+                </div>
+                <div class="header__soc-icons">
+                    <a href="https://t.me/vpkvvrb" target="_blank">
+                        <img src="{% static 'img/telegram.svg' %}" alt="telegram"/>
+                    </a>
+                </div>
+                <div class="header__soc-icons">
+                    <a href="https://www.instagram.com/molodaya_gvardiya_vv?igsh=Z2ljdnkyM3c1M mtn " target="_blank">
+                        <img src="{% static 'img/instagram.svg' %}" alt="instagram"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__nav-burger-block">
+        <div class="header__nav-btn-block">
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <img class="header__nav_icon" src="{% static 'img/project.svg' %}" alt="project-icon"/>
+                        <a href="#project" class="header__nav-link">О проекте</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <img class="header__nav_icon" src="{% static 'img/news.svg' %}" alt="project-icon"/>
+                        <a href="#news" class="header__nav-link">Новости</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <img class="header__nav_icon" src="{% static 'img/clubs.svg' %}" alt="project-icon"/>
+                        <a href="#clubs" class="header__nav-link">Клубы</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <img class="header__nav_icon" src="{% static 'img/questions.svg' %}" alt="project-icon"/>
+                        <a href="#question" class="header__nav-link">Вопросы</a>
+                    </li>
+                </ul>
+                <div class="header__nav-close">
+                    <span class="header__nav-close-line"></span>
+                    <span class="header__nav-close-line"></span>
+                </div>
+            </nav>
+
+            <button class="header__btn-list">
+                <a class="header__btn-link"
+                   href="https://pay.raschet.by/#00020132250010by.raschet010752822515303933580 2BY5913UNP_1949073146007Belarus63048A14 "
+                   target="_blank">Сделать вклад</a>
+            </button>
+        </div>
+        <div class="header__burger burger">
+            <span class="header__burger-line header__burger-line-first line"></span>
+            <span class="header__burger-line header__burger-line-second line"></span>
+            <span class="header__burger-line header__burger-line-third line"></span>
+        </div>
+    </div>
+</header>

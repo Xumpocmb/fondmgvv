@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <main class="about-main">
+        <div class="about__news-page-block">
+            <div class="club-news__page-link">
+                <div class="club-news__link-block">
+                    <img class="club-news__house" src="{% static 'img/house.svg' %}" alt="house-icon"/>
+                    <a href="{% url 'app_home:home' %}" class="club-news__link">На главную</a>
+                </div>
+                <div>
+                    <span class="club-news__link-span">/</span>
+                </div>
+                <div class="club-news__arrow-span">
+                    <span class="club-news__link-span">Новость</span>
+                </div>
+            </div>
+        </div>
+        <div class="about__banner-block">
+            <img src="{% static 'img/clubs-banner-img.png' %}" alt="clubs-banner-img"/>
+        </div>
+        <section class="about">
+            <h1 class="about__title">Военно-патриотический клуб «Рысь»</h1>
+            <div class="about__club-text-soc">
+                <div class="about__club-text">
+                    <p class="about__text-p">Воинская часть 3214</p>
+                    <p class="about__text-p">Основан 02.10.2021</p>
+                </div>
+                <div class="about__club-soc-block">
+                    <div class="about__club-soc">
+                        <a class="about__soc-title"
+                           href="https://www.instagram.com/molodaya_gvardiya_vv?igsh=Z2ljdnkyM3c1M mtn" target="_blank">
+                            <img src="{% static 'img/inst-club.svg' %}" alt="instagram" class="about__club-soc-icon"/>Инстаграм</a>
+                        <a class="about__soc-title"
+                           href="https://www.instagram.com/molodaya_gvardiya_vv?igsh=Z2ljdnkyM3c1M mtn" target="_blank">
+                            <img src="{% static 'img/phone-club.svg' %}" alt="phone" class="about__club-soc-icon"/>Телефон</a>
+                        <a class="about__soc-title"
+                           href="https://www.instagram.com/molodaya_gvardiya_vv?igsh=Z2ljdnkyM3c1M mtn" target="_blank">
+                            <img src="{% static 'img/tic-toc-club.svg' %}" alt="Tik-Tok" class="about__club-soc-icon"/>Tik-Tok</a>
+                        <a class="about__soc-title"
+                           href="https://www.instagram.com/molodaya_gvardiya_vv?igsh=Z2ljdnkyM3c1M mtn" target="_blank">
+                            <img src="{% static 'img/telega-svg.svg' %}" alt="Телеграм" class="about__club-soc-icon"/>
+                            <span>Телеграм</span></a>
+                    </div>
+                </div>
+            </div>
+            <h2 class="about__h2">О клубе</h2>
+            <p class="about__about-text">
+                Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст
+                Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст
+                Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст
+                Текст Текст Текст Текст ТекстТекст Текст Текст Текст Текст Текст.
+            </p>
+            <div class="club-news__img-blocks">
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

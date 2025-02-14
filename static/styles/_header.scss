@@ -1,0 +1,345 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  &__contacts-block {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px 0 40px;
+    align-items: center;
+    background: #223e4c;
+    height: 55px;
+    @include media-small-desctop {
+      padding: 0 5px 0 5px;
+    }
+  }
+
+  &__nav-burger-block {
+    @include media-tablet {
+      background: white;
+      display: flex;
+      justify-content: end;
+    }
+  }
+
+  &__burger {
+    width: 30px;
+    height: 16px;
+    position: relative;
+    display: none;
+    color: black;
+    top: 12.75px;
+    right: 12.75px;
+    cursor: pointer;
+
+    @include media-tablet {
+      display: block;
+    }
+  }
+
+  &__burger-line {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    color: black;
+    background: black;
+    right: 0;
+    cursor: pointer;
+    transition: 0.3s all linear;
+  }
+
+  &__burger-line-first {
+    right: 0;
+    width: 15px;
+  }
+
+  &__burger-line-second {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__burger-line-third {
+    bottom: 0;
+    width: 15px;
+  }
+
+  &__phone-soc-block {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__logo-address-block {
+    display: flex;
+    align-items: center;
+    gap: 5.5px;
+  }
+
+  &__logo-block {
+    margin-top: 55px;
+    width: 92px;
+    height: 80px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include media-small-desctop {
+      width: 76px;
+      height: 63px;
+    }
+  }
+
+  &__adress {
+    @include font($height: 140%, $size: 16px, $weight: 300);
+    font-family: $font-family;
+    color: white;
+    @include media-tablet {
+      display: none;
+    }
+  }
+
+  &__phone-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media-tablet {
+      display: none;
+    }
+  }
+
+  &__call {
+    @include font($height: 100%, $size: 15px, $weight: 400);
+    font-family: $font-family;
+    color: white;
+  }
+
+  &__phone {
+    @include font($height: 140%, $size: 15px, $weight: 400);
+    font-family: $font-family;
+    color: #328ca7;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &__soc-icons-block {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    @include media-small-desctop {
+      gap: 12px;
+    }
+  }
+
+  &__soc-icons {
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__soc-icon {
+    width: 30px;
+    height: 30px;
+    transition: fill 0.3s ease;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover img {
+      filter: brightness(0) saturate(100%) invert(1);
+    }
+  }
+
+  &__nav-btn-block {
+    display: flex;
+    background-color: white;
+    padding-right: 40px;
+
+    @include media-tablet {
+      justify-content: end;
+      padding-right: 0;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+
+    @include media-tablet {
+      position: fixed;
+      padding: 10px 20px;
+      width: 167px;
+      height: 183px;
+      margin-top: 93px;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      transform: translateY(-200%);
+      // transition: 0.5s all linear;
+      background-color: white;
+      justify-content: center;
+    }
+  }
+
+  &__nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 16.5px 25px 16.5px 0;
+    gap: 25px;
+    margin: 0;
+
+    @include media-tablet {
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+    }
+  }
+
+  &__nav-item {
+    @include media-tablet {
+      display: flex;
+      align-items: center;
+      padding-bottom: 5px;
+      position: relative;
+      gap: 1px;
+      width: 100%;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 0.56px solid #333;
+      }
+    }
+  }
+
+  &__nav-link {
+    font-family: $font-family;
+    @include font($height: 100%, $size: 22px, $weight: 400);
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: #328ca7;
+
+    &:hover {
+      text-decoration: underline;
+      transition: all 0.3s ease;
+      color: #328ca7;
+    }
+
+    @include media-tablet {
+      @include font($height: 100%, $size: 16px, $weight: 400);
+    }
+  }
+
+  &__nav-close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -31.25px;
+    right: 6.75px;
+    z-index: 11;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__nav-close-line {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: black;
+    position: absolute;
+    top: 50%;
+  }
+
+  &__nav-close-line:first-child {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &__nav-close-line:last-child {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  &__btn-list {
+    background: #f26c4f;
+    border-radius: 27px;
+    width: 151px;
+    height: 39px;
+    border: none;
+    cursor: pointer;
+    height: 39px;
+    margin-top: 7.82px;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: all 0.3s ease;
+        background: #e7421c;
+      }
+    }
+
+    @media (hover: none) {
+      &:active {
+        transform: all 0.3s ease;
+        background: #e7421c;
+      }
+    }
+
+    @include media-tablet {
+      width: 120px;
+      height: 30px;
+      margin-right: 23px;
+      padding: 0 0 4px 0;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__btn-link {
+    font-family: $font-family;
+    @include font($height: 110%, $size: 16px, $weight: 400);
+    color: #fffdfd;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    @include media-tablet {
+      @include font($height: 110%, $size: 12px, $weight: 400);
+      color: #fffdfd;
+    }
+  }
+
+  &__nav-active {
+    transform: translateX(0);
+    position: absolute;
+  }
+
+  &__nav_icon {
+    display: none;
+
+    @include media-tablet {
+      display: block;
+    }
+  }
+}
+
+.close-burger-item {
+  opacity: 0;
+}
+
+.open-close-item {
+  opacity: 1;
+}

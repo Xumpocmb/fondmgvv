@@ -1,0 +1,361 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <main class="main">
+        <section class="banner">
+            <h3 class="banner__title-h3">Местный благотворительный фонд</h3>
+            <div class="swiper mySwiper1">
+                <div id="swiper-wrapper" class="swiper-wrapper">
+                    <div class="swiper-background"></div>
+                    <div class="swiper-slide swiper-slide1">
+                        <img src="{% static 'img/slide_9.jpg' %}" alt="slide-img1"/>
+                        <h1 class="banner__title-h1">
+                            <span class="banner__title-h1--small">Молодая</span> <br/>
+                            <span class="banner__title-h1--large">Гвардия</span>
+                        </h1>
+                    </div>
+                    <div class="swiper-slide swiper-slide1">
+                        <img src="{% static 'img/slide_1.jpg' %}" alt="slide-img1"/>
+                        <h1 class="banner__title-h1">
+                            <span class="banner__title-h1--small">Молодая</span> <br/>
+                            <span class="banner__title-h1--large">Гвардия</span>
+                        </h1>
+                    </div>
+                    <div class="swiper-slide swiper-slide1">
+                        <img src="{% static 'img/slide_2.jpg' %}" alt="slide-img1"/>
+                        <h1 class="banner__title-h1">
+                            <span class="banner__title-h1--small">Молодая</span> <br/>
+                            <span class="banner__title-h1--large">Гвардия</span>
+                        </h1>
+                    </div>
+                    <div class="swiper-slide swiper-slide1">
+                        <img src="{% static 'img/slide_3.jpg' %}" alt="slide-img1"/>
+                        <h1 class="banner__title-h1">
+                            <span class="banner__title-h1--small">Молодая</span> <br/>
+                            <span class="banner__title-h1--large">Гвардия</span>
+                        </h1>
+                    </div>
+                    <div class="swiper-slide swiper-slide1">
+                        <img src="{% static 'img/slide_4.jpg' %}" alt="slide-img1"/>
+                        <h1 class="banner__title-h1">
+                            <span class="banner__title-h1--small">Молодая</span> <br/>
+                            <span class="banner__title-h1--large">Гвардия</span>
+                        </h1>
+                    </div>
+                    <div class="swiper-slide swiper-slide1">
+                        <img src="{% static 'img/slide_5.jpg' %}" alt="slide-img1"/>
+                        <h1 class="banner__title-h1">
+                            <span class="banner__title-h1--small">Молодая</span> <br/>
+                            <span class="banner__title-h1--large">Гвардия</span>
+                        </h1>
+                    </div>
+                    <div class="swiper-slide swiper-slide1">
+                        <img src="{% static 'img/slide_6.jpg' %}" alt="slide-img1"/>
+                        <h1 class="banner__title-h1">
+                            <span class="banner__title-h1--small">Молодая</span> <br/>
+                            <span class="banner__title-h1--large">Гвардия</span>
+                        </h1>
+                    </div>
+                    <div class="swiper-slide swiper-slide1">
+                        <img src="{% static 'img/slide_7.jpg' %}" alt="slide-img1"/>
+                        <h1 class="banner__title-h1">
+                            <span class="banner__title-h1--small">Молодая</span> <br/>
+                            <span class="banner__title-h1--large">Гвардия</span>
+                        </h1>
+                    </div>
+                    <div class="swiper-slide swiper-slide1">
+                        <img src="{% static 'img/slide_8.jpg' %}" alt="slide-img1"/>
+                        <h1 class="banner__title-h1">
+                            <span class="banner__title-h1--small">Молодая</span> <br/>
+                            <span class="banner__title-h1--large">Гвардия</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <p class="banner__title-p">Наша цель – формирование патриотического сознания у <br/>молодежи и сохранение
+                исторической памяти.
+            </p>
+        </section>
+        <section id="project" class="project">
+            <h3 class="project__title">О проекте</h3>
+            <hr id="line" class="line"/>
+            <div class="project__main-block">
+                <div class="project__first-block">
+                    <p class="project__time">Время выбрало нас</p>
+                    <p class="project__p">Деятельность осуществляется в рамках реализации Указа <br/>Президента
+                        Республики
+                        Беларусь № 160 «О развитии <br/>военно-патриотических клубов» от 4 мая 2022 года</p>
+                </div>
+                <div class="project__second-block">
+                    <p class="project__p2">Местный благотворительный фонд «Молодая Гвардия» <br/>был основан 3 мая 2024
+                        года. <br/>Он объединяет все военно-патриотические клубы <br/>созданные на базе внутренних
+                        войск.
+                    </p>
+                </div>
+            </div>
+            <div class="project__video-block">
+                <video width="100%" height="100%" class="project__video">
+                    <source src="{% static 'video/intro.mp4' %}" type="video/mp4"/>
+                </video>
+                <div class="project__video-overlay">
+                    <img src="{% static 'img/video.png' %}" alt="Заставка" class="project__video-poster"/>
+                    <div class="project__video-play-btn">
+                        <img src="{% static 'img/play button.svg' %}" alt="play button"/>
+                    </div>
+                </div>
+                <div class="project__video-link" style="display: none">
+                    <a href="https://youtu.be/g3YrlnXsvVM?si=n8iWQvGJl9zykWDR" target="_blank">Смотреть на YouTube</a>
+                </div>
+            </div>
+            <div class="project__text-block">
+                <p class="project__text">
+                    <span class="project__bold">Фонд ставит перед собой важные задачи:</span>поддерживать организации,
+                    осуществляющие <br/>патриотическое воспитание молодежи.
+                    <span class="project__more-text">Он помогает сохранять память о Великой <br/>Отечественной войне и героическом прошлом белорусского народа,воспитывать уважение <br/>и любовь к Родине. <br/>Кроме того, фонд оказывает поддержку нуждающимся семьям учащихсяклубов и бывшим <br/>военнослужащим, оказавшимся в трудной жизненной ситуации
+              </span>
+                </p>
+                <button class="project__read-more">Читать полностью</button>
+            </div>
+        </section>
+        <section id="clubs" class="clubs">
+            <h3 class="clubs__title">Клубы</h3>
+            <hr id="line"/>
+            <div class="clubs__main-block">
+                <div class="clubs__first-block">
+                    <p class="clubs__p">На базе воинских частей и соединений <br/>внутренних войск созданы и успешно
+                        <br/>функционируют
+                        <span>19 военно-патриотических клубов</span><br/>по всей стране.</p>
+                </div>
+
+                <div class="clubs__buttons">
+                    <button class="clubs__btn">Все</button>
+                    <button class="clubs__btn">Минск</button>
+                    <button class="clubs__btn">Минская обл.</button>
+                    <button class="clubs__btn">Витебская обл.</button>
+                    <button class="clubs__btn">Брестская обл.</button>
+                    <button class="clubs__btn">Гродненская обл.</button>
+                    <button class="clubs__btn">Гомельская обл.</button>
+                    <button class="clubs__btn">Могилевская обл.</button>
+                    <select name="region" id="region-select" class="clubs__select">
+                        <option value="minsk">Минск</option>
+                        <option value="minsk-region">Минская обл.</option>
+                        <option value="vitebsk-region">Витебская обл.</option>
+                        <option value="brest-region">Брестская обл.</option>
+                        <option value="grodno-region">Гродненская обл.</option>
+                        <option value="gomel-region">Гомельская обл.</option>
+                        <option value="mogilev-region">Могилевская обл.</option>
+                    </select>
+                </div>
+            </div>
+            <div class="swiper mySwiper2">
+                <div class="swiper-wrapper swiper-wrapper2 clubs__cards">
+                    <div class="swiper-slide swiper-slide2 clubs__card">
+                        <a href=""><img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/></a>
+                        <p>Военно-патриотический <br/>клуб “Рысь”</p>
+                    </div>
+                    <div class="swiper-slide swiper-slide2 clubs__card">
+                        <img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/>
+                        <p>Военно-патриотический <br/>клуб “Рысь”</p>
+                    </div>
+                    <div class="swiper-slide swiper-slide2 clubs__card">
+                        <img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/>
+                        <p>Военно-патриотический <br/>клуб “Рысь”</p>
+                    </div>
+                    <div class="swiper-slide swiper-slide2 clubs__card">
+                        <img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/>
+                        <p>Военно-патриотический <br/>клуб “Рысь”</p>
+                    </div>
+                    <div class="swiper-slide swiper-slide2 clubs__card">
+                        <img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/>
+                        <p>Военно-патриотический <br/>клуб “Рысь”</p>
+                    </div>
+                    <div class="swiper-slide swiper-slide2 clubs__card">
+                        <img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/>
+                        <p>Военно-патриотический <br/>клуб “Рысь”</p>
+                    </div>
+                </div>
+                <div class="swiper-button-prev swiper-button-prev-1"></div>
+                <div class="swiper-button-next swiper-button-next-1"></div>
+            </div>
+            <p class="clubs__text">Более 2500 мальчишек и девчонок в возрасте от 11 до 17 лет уже являются
+                воспитанниками
+                клубов. Они получают полное обеспечение: от формы одежды до учебного оружия и туристического снаряжения.
+                <br/>Каждый клуб гордится своими знаменами, тщательно разработанной формой, знаками различия, шевронами
+                и
+                погонами. <br/>Основное внимание уделяется занятиям по огневой, тактической, медицинской и физической
+                подготовке, которые проводят опытные инструкторы-военнослужащие. <br/>Помимо этого, в клубах регулярно
+                организуются встречи с государственными и общественными деятелями, успешными профессионалами и лидерами
+                общественных мнений, вдохновляющими молодежь на новые достижения.
+            </p>
+            <div class="clubs__erip">
+                <div class="clubs__erip-block">
+                    <div class="clubs__text-qr">
+                        <h2 class="clubs__erip-title">сильное поколение:</h2>
+                        <p class="clubs__erip-second-title">Ваша помощь - их будущее!</p>
+                        <div class="clubs__text-qr-block">
+                            <div class="clubs__text-block">
+                                <p class="clubs__erip-p1">Совершить <br
+                                        class="clubs__adaptive-br"/>благотворительный<br/>платеж
+                                    через систему <br/>«Расчет» (ЕРИП)</p>
+                                <p class="clubs__erip-p2">После перехода на платёжную систему <br/>у Вас появится
+                                    возможность пожертвовать <br/>сумму в размере от 10 до 1 000 000 <br/>белорусский
+                                    рублей.</p>
+                            </div>
+                            <div class="clubs__qr">
+                                <img src="{% static 'img/qr.png' %}" alt="qr"/>
+                            </div>
+                        </div>
+                        <div class="clubs__erip-btn-block">
+                            <a href="https://pay.raschet.by/#00020132250010by.raschet010752822515303933580 2BY5913UNP_1949073146007Belarus63048A14 "
+                               target="_blank">
+                                <button class="clubs__erip-btn">Сделать свой вклад</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clubs__girl">
+                        <img src="{% static 'img/logo2.png' %}" alt="girl"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="news" class="news">
+            <h3 class="news__title">Новости</h3>
+            <hr id="line" class="line"/>
+            <div class="swiper mySwiper3">
+                <div class="swiper-wrapper swiper-wrapper3 news__cards">
+                    <div class="swiper-slide swiper-slide3 news__card">
+                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
+                        <div class="news__text">
+                            <span class="news__data">22.10.2024</span>
+                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide3 news__card">
+                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
+                        <div class="news__text">
+                            <span class="news__data">22.10.2024</span>
+                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide3 news__card">
+                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
+                        <div class="news__text">
+                            <span class="news__data">22.10.2024</span>
+                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide3 news__card">
+                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
+                        <div class="news__text">
+                            <span class="news__data">22.10.2024</span>
+                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide3 news__card">
+                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
+                        <div class="news__text">
+                            <span class="news__data">22.10.2024</span>
+                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide3 news__card">
+                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
+                        <div class="news__text">
+                            <span class="news__data">22.10.2024</span>
+                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide3 news__card">
+                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
+                        <div class="news__text">
+                            <span class="news__data">22.10.2024</span>
+                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide3 news__card">
+                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
+                        <div class="news__text">
+                            <span class="news__data">22.10.2024</span>
+                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev swiper-button-prev-2"></div>
+                <div class="swiper-button-next swiper-button-next-2"></div>
+            </div>
+        </section>
+        <section id="question" class="question">
+            <h3 class="question__title">Вопрос & Ответ</h3>
+            <hr id="line" class="line"/>
+            <div class="question__main-block">
+                <div class="question__text-block">
+                    <p class="question__p">Здесь собраны часто <br/>задаваемые вопросы <br/>и ответы на них.</p>
+                </div>
+                <div class="question__btn-block">
+                    <div class="question__dropdown">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button id="btn" class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                            aria-expanded="false"
+                                            aria-controls="flush-collapseOne">Как записать ребенка в клуб?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div id="body" class="accordion-body">Необходимо обратиться к руководителю клуба, в
+                                        котором хочет заниматься ребенок. На каждой странице<a href="#clubs">клуба</a>
+                                        размещены контактные данные, где можно узнать необходимую информацию. Также
+                                        можно
+                                        обратиться в дежурную часть внутренних войск населенного пункта, где примут
+                                        информацию и передадут в военно-патриотический клуб.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button id="btn" class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                            aria-expanded="false"
+                                            aria-controls="flush-collapseTwo">Как сделать взнос на развитие клуба?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                     aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div id="body" class="accordion-body">
+                                        1. Система «Расчет»(ЕРИП); 2. Благотворительность,
+                                        общественные объединения; 3. Патриотические проекты; 4.
+                                        Молодая Гвардия. Либо перейдя по ссылке
+                                        <a href="https://pay.raschet.by/#00020132250010by.raschet0107528225153039335802BY5913UNP_1949073146007Belarus63048A14 ."
+                                           target="_blank">ЕРИП</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button id="btn" class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                            aria-expanded="false"
+                                            aria-controls="flush-collapseThree">Есть ли льготы при поступлении в военные
+                                        вузы?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                     aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div id="body" class="accordion-body">Да, выпускники военно-патриотических клубов
+                                        пользуются льготами при поступлении в вузы системы национальной безопасности и
+                                        на
+                                        военные факультеты в обычных вузах. Важно, чтобы не было оценок ниже 4 баллов в
+                                        аттестате и ниже 6 на вступительных испытаниях.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="question__btn">Задать вопрос</button>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
