@@ -93,6 +93,7 @@
                     </p>
                 </div>
             </div>
+            <!--
             <div class="project__video-block">
                 <video width="100%" height="100%" class="project__video">
                     <source src="{% static 'video/intro.mp4' %}" type="video/mp4"/>
@@ -107,6 +108,7 @@
                     <a href="https://youtu.be/g3YrlnXsvVM?si=n8iWQvGJl9zykWDR" target="_blank">Смотреть на YouTube</a>
                 </div>
             </div>
+            -->
             <div class="project__text-block">
                 <p class="project__text">
                     <span class="project__bold">Фонд ставит перед собой важные задачи:</span>поддерживать организации,
@@ -178,7 +180,7 @@
                                     рублей.</p>
                             </div>
                             <div class="clubs__qr">
-                                <img src="{% static 'img/qr.png' %}" alt="qr"/>
+                                <img src="{{ qr_code.qr_picture.url }}" alt="qr"/>
                             </div>
                         </div>
                         <div class="clubs__erip-btn-block">
@@ -303,8 +305,7 @@
                                         1. Система «Расчет»(ЕРИП); 2. Благотворительность,
                                         общественные объединения; 3. Патриотические проекты; 4.
                                         Молодая Гвардия. Либо перейдя по ссылке
-                                        <a href="https://pay.raschet.by/#00020132250010by.raschet0107528225153039335802BY5913UNP_1949073146007Belarus63048A14 ."
-                                           target="_blank">ЕРИП</a>
+                                        <a href="{{ erip_link }}" target="_blank">ЕРИП</a>
                                     </div>
                                 </div>
                             </div>
