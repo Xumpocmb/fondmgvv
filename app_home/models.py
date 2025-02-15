@@ -3,9 +3,15 @@ from django.urls import reverse
 
 
 class SocialLink(models.Model):
-    link_name = models.CharField(max_length=100, blank=True, null=True, verbose_name="Название соц. сети")
-    link_slug = models.SlugField(unique=True, max_length=100, blank=True, null=True, verbose_name="Слаг ссылки (заполняется автоматически)")
-    link_url = models.CharField(max_length=100, blank=True, null=True, verbose_name="Ссылка на соц. сеть")
+    TYPE_SOCIAL_CHOICES = [
+        ('phone', 'Телефон'),
+        ('inst', 'Instagram'),
+        ('tg', 'Telegram'),
+        ('tik-tok', 'TikTok'),
+    ]
+    link_name = models.CharField(max_length=100, blank=True, null=True, verbose_name="Название")
+    link_type = models.CharField(max_length=100, choices=TYPE_SOCIAL_CHOICES, verbose_name="Тип контакта", blank=True, null=True)
+    link_url = models.CharField(max_length=100, blank=True, null=True, verbose_name="Контакт")
 
     class Meta:
         db_table = 'social_link'
@@ -14,22 +20,6 @@ class SocialLink(models.Model):
 
     def __str__(self):
         return f"Ссылка: {self.link_name}"
-
-    def get_slug(self):
-        return self.link_slug
-
-
-class PhoneNumber(models.Model):
-    phone_name = models.CharField(max_length=100, blank=True, null=True, verbose_name="Название номера")
-    phone_number = models.CharField(max_length=17, blank=True, null=True, verbose_name="Номер телефона")
-
-    class Meta:
-        db_table = 'phone_number'
-        verbose_name = 'Номер телефона'
-        verbose_name_plural = 'Номера телефонов'
-
-    def __str__(self):
-        return f"Номер: {self.phone_name}"
 
 
 class SiteEmail(models.Model):

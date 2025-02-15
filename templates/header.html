@@ -37,19 +37,19 @@
                 <ul class="header__nav-list">
                     <li class="header__nav-item">
                         <img class="header__nav_icon" src="{% static 'img/project.svg' %}" alt="project-icon"/>
-                        <a href="#project" class="header__nav-link">О проекте</a>
+                        <a href="{% url 'app_home:home' %}#project" class="header__nav-link">О проекте</a>
                     </li>
                     <li class="header__nav-item">
                         <img class="header__nav_icon" src="{% static 'img/news.svg' %}" alt="project-icon"/>
-                        <a href="#news" class="header__nav-link">Новости</a>
+                        <a href="{% url 'app_home:home' %}#news" class="header__nav-link">Новости</a>
                     </li>
                     <li class="header__nav-item">
                         <img class="header__nav_icon" src="{% static 'img/clubs.svg' %}" alt="project-icon"/>
-                        <a href="#clubs" class="header__nav-link">Клубы</a>
+                        <a href="{% url 'app_home:home' %}#clubs" class="header__nav-link">Клубы</a>
                     </li>
                     <li class="header__nav-item">
                         <img class="header__nav_icon" src="{% static 'img/questions.svg' %}" alt="project-icon"/>
-                        <a href="#question" class="header__nav-link">Вопросы</a>
+                        <a href="{% url 'app_home:home' %}#question" class="header__nav-link">Вопросы</a>
                     </li>
                 </ul>
                 <div class="header__nav-close">

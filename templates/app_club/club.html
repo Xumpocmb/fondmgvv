@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <main class="about-main">
+        <div class="about__news-page-block">
+            <div class="club-news__page-link">
+                <div class="club-news__link-block">
+                    <img class="club-news__house" src="{% static 'img/house.svg' %}" alt="house-icon"/>
+                    <a href="{% url 'app_home:home' %}" class="club-news__link">На главную</a>
+                </div>
+                <div>
+                    <span class="club-news__link-span">/</span>
+                </div>
+                <div class="club-news__arrow-span">
+                    <span class="club-news__link-span">{{ club.name }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="about__banner-block">
+            <img src="{% static 'img/clubs-banner-img.png' %}" alt="clubs-banner-img"/>
+        </div>
+        <section class="about">
+            <h1 class="about__title">{{ club.name }}</h1>
+            <div class="about__club-text-soc">
+                <div class="about__club-text">
+                    <p class="about__text-p">{{ club.military_unit }}</p>
+                    <p class="about__text-p">Основан: {{ club.date_of_founding }}</p>
+                </div>
+                <div class="about__club-soc-block">
+                    <div class="about__club-soc">
+
+                        {% if club_social_link_inst %}
+                            <a class="about__soc-title"
+                               href="{{ club_social_link_inst.social_link }}" target="_blank">
+                                <img src="{% static 'img/inst-club.svg' %}" alt="instagram"
+                                     class="about__club-soc-icon"/>Инстаграм</a>
+                        {% elif main_social_links_inst %}
+                            <a class="about__soc-title"
+                               href="{{ main_social_links_inst.link_url }}" target="_blank">
+                                <img src="{% static 'img/inst-club.svg' %}" alt="instagram"
+                                     class="about__club-soc-icon"/>Инстаграм</a>
+                        {% endif %}
+
+                        {% if club_social_link_phone %}
+                            <a class="about__soc-title" href="">
+                                <img src="{% static 'img/phone-club.svg' %}" alt="phone"
+                                     class="about__club-soc-icon"/>{{ club_social_link_phone.social_link }}</a>
+                        {% elif main_social_link_phone %}
+                            <a class="about__soc-title" href="">
+                                <img src="{% static 'img/phone-club.svg' %}" alt="phone"
+                                     class="about__club-soc-icon"/>{{ main_social_link_phone.link_url }}</a>
+                        {% endif %}
+
+                        {% if club_social_link_tiktok %}
+                            <a class="about__soc-title"
+                               href="{{ club_social_link_tiktok.social_link }}" target="_blank">
+                                <img src="{% static 'img/tic-toc-club.svg' %}" alt="Tik-Tok"
+                                     class="about__club-soc-icon"/>Tik-Tok</a>
+                        {% elif main_social_link_tiktok %}
+                            <a class="about__soc-title"
+                               href="{{ main_social_link_tiktok.link_url }}" target="_blank">
+                                <img src="{% static 'img/tic-toc-club.svg' %}" alt="Tik-Tok"
+                                     class="about__club-soc-icon"/>Tik-Tok</a>
+                        {% endif %}
+
+                        {% if club_social_link_tg %}
+                            <a class="about__soc-title"
+                               href="{{ club_social_link_tg.social_link }}" target="_blank">
+                                <img src="{% static 'img/telega-svg.svg' %}" alt="Телеграм"
+                                     class="about__club-soc-icon"/>
+                                <span>Телеграм</span></a>
+                        {% elif main_social_link_tg %}
+                            <a class="about__soc-title"
+                               href="{{ main_social_link_tg.link_url }}" target="_blank">
+                                <img src="{% static 'img/telega-svg.svg' %}" alt="Телеграм"
+                                     class="about__club-soc-icon"/>
+                                <span>Телеграм</span></a>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+            <h2 class="about__h2">О клубе</h2>
+            <p class="about__about-text">
+                {{ club.description }}
+            </p>
+            <div class="club-news__img-blocks">
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+                <div class="club-news__img-block">
+                    <img src="{% static 'img/news-img1.png' %}../" alt="news-img"/>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

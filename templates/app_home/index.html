@@ -128,55 +128,31 @@
                 </div>
 
                 <div class="clubs__buttons">
-                    <button class="clubs__btn">Все</button>
-                    <button class="clubs__btn">Минск</button>
-                    <button class="clubs__btn">Минская обл.</button>
-                    <button class="clubs__btn">Витебская обл.</button>
-                    <button class="clubs__btn">Брестская обл.</button>
-                    <button class="clubs__btn">Гродненская обл.</button>
-                    <button class="clubs__btn">Гомельская обл.</button>
-                    <button class="clubs__btn">Могилевская обл.</button>
+                    <button class="clubs__btn" data-region="all">Все</button>
+                    {% for club_region in club_regions %}
+                        <button class="clubs__btn" data-region="{{ club_region.id }}">{{ club_region.region }}</button>
+                    {% endfor %}
                     <select name="region" id="region-select" class="clubs__select">
-                        <option value="minsk">Минск</option>
-                        <option value="minsk-region">Минская обл.</option>
-                        <option value="vitebsk-region">Витебская обл.</option>
-                        <option value="brest-region">Брестская обл.</option>
-                        <option value="grodno-region">Гродненская обл.</option>
-                        <option value="gomel-region">Гомельская обл.</option>
-                        <option value="mogilev-region">Могилевская обл.</option>
+                        <option value="all">Все</option>
+                        {% for club_region in club_regions %}
+                        	<option value="{{ club_region.id }}">{{ club_region.region }}</option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>
             <div class="swiper mySwiper2">
                 <div class="swiper-wrapper swiper-wrapper2 clubs__cards">
-                    <div class="swiper-slide swiper-slide2 clubs__card">
-                        <a href=""><img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/></a>
-                        <p>Военно-патриотический <br/>клуб “Рысь”</p>
-                    </div>
-                    <div class="swiper-slide swiper-slide2 clubs__card">
-                        <img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/>
-                        <p>Военно-патриотический <br/>клуб “Рысь”</p>
-                    </div>
-                    <div class="swiper-slide swiper-slide2 clubs__card">
-                        <img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/>
-                        <p>Военно-патриотический <br/>клуб “Рысь”</p>
-                    </div>
-                    <div class="swiper-slide swiper-slide2 clubs__card">
-                        <img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/>
-                        <p>Военно-патриотический <br/>клуб “Рысь”</p>
-                    </div>
-                    <div class="swiper-slide swiper-slide2 clubs__card">
-                        <img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/>
-                        <p>Военно-патриотический <br/>клуб “Рысь”</p>
-                    </div>
-                    <div class="swiper-slide swiper-slide2 clubs__card">
-                        <img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/>
-                        <p>Военно-патриотический <br/>клуб “Рысь”</p>
-                    </div>
+                    {% for club in all_clubs %}
+                        <div class="swiper-slide swiper-slide2 clubs__card" data-region="{{ club.region.id }}">
+                            <a href="{% url 'app_club:club_info' club.id %}"><img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/></a>
+                            <p>Военно-патриотический <br/>клуб “{{ club.name }}”</p>
+                        </div>
+                    {% endfor %}
                 </div>
                 <div class="swiper-button-prev swiper-button-prev-1"></div>
                 <div class="swiper-button-next swiper-button-next-1"></div>
             </div>
+
             <p class="clubs__text">Более 2500 мальчишек и девчонок в возрасте от 11 до 17 лет уже являются
                 воспитанниками
                 клубов. Они получают полное обеспечение: от формы одежды до учебного оружия и туристического снаряжения.
@@ -359,3 +335,8 @@
         </section>
     </main>
 {% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/region_filter.js' %}"></script>
+{% endblock %}
+

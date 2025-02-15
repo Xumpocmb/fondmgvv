@@ -92,13 +92,17 @@ document.addEventListener("DOMContentLoaded", () => {
     videoLink.style.display = "block";
   });
 });
-
 document.addEventListener("DOMContentLoaded", () => {
   const readMoreButton = document.querySelector(".project__read-more");
   const moreText = document.querySelector(".project__more-text");
+  let isTextVisible = false;
 
   readMoreButton.addEventListener("click", () => {
-    moreText.style.display = "inline";
-    readMoreButton.style.display = "none";
+    if (isTextVisible) {
+      moreText.style.display = "none";
+    } else {
+      moreText.style.display = "inline";
+    }
+    isTextVisible = !isTextVisible;
   });
 });

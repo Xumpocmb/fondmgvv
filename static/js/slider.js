@@ -1,4 +1,4 @@
-const swiper = new Swiper(".swiper", {
+const swiper = new Swiper(".mySwiper1", {
   direction: "horizontal",
   effect: "coverflow",
   grabCursor: true,
@@ -19,4 +19,25 @@ const swiper = new Swiper(".swiper", {
   // },
   slideToClickedSlide: true,
   simulateTouch: true,
+});
+
+const swiper2 = new Swiper(".mySwiper2", {
+  direction: "horizontal",
+  slidesPerView: 3.5,
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next-1",
+    prevEl: ".swiper-button-prev-1",
+  },
+});
+
+const swiper3 = new Swiper(".mySwiper3", {
+  direction: "horizontal",
+  slidesPerView: 3.5,
+  loop: true,
+
+  navigation: {
+    nextEl: ".swiper-button-next-2",
+    prevEl: ".swiper-button-prev-2",
+  },
 });

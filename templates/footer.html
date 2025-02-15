@@ -10,8 +10,7 @@
                     <div class="footer__icon-row">
                         <div class="footer__icon-contact">
                             <img class="footer__icons" width="26" height="25" src="{% static 'img/phone.svg' %}" alt="phone"/>
-                            <a href="" data-copy="+375 44 732-64-55" class="footer__cont copy-to-clipboard">+375 44
-                                732-64-55</a>
+                            <a href="" data-copy="{{ main_social_link_phone }}" class="footer__cont copy-to-clipboard">{{ main_social_link_phone }}</a>
                         </div>
                         <div class="footer__icon-contact">
                             <img class="footer__icons" width="26" height="25" src="{% static 'img/mail.png' %}" alt="mail"/>
@@ -22,15 +21,15 @@
 
                     <div class="footer__icon-row footer__soc-row">
                         <div class="footer__icon-contact">
-                            <a href="https://t.me/vpkvvrb"><img width="26" height="25" src="{% static 'img/telegram.svg' %}" alt="telegram" class="footer__soc-icons"/></a>
-                            <a href="https://t.me/vpkvvrb" class="footer__cont footer__telega" target="_blank">vpkvvrb</a>
+                            <a href="{{ main_social_link_tg }}"><img width="26" height="25" src="{% static 'img/telegram.svg' %}" alt="telegram" class="footer__soc-icons"/></a>
+                            <a href="{{ main_social_link_tg }}" class="footer__cont footer__telega" target="_blank">Telegram</a>
                         </div>
                         <div class="footer__icon-contact">
-                            <a href="https://www.instagram.com/molodaya_gvardiya_vv?igsh=Z2ljdnkyM3c1M mtn">
+                            <a href="{{ main_social_link_inst }}">
                                 <img width="26" height="25" src="{% static 'img/instagram.svg' %}" alt="instagram" class="footer__soc-icons"/>
                             </a>
-                            <a href="https://www.instagram.com/molodaya_gvardiya_vv?igsh=Z2ljdnkyM3c1M mtn "
-                               class="footer__cont footer__inst" target="_blank">molodaya_gvardiya_vv</a>
+                            <a href="{{ main_social_link_inst }}"
+                               class="footer__cont footer__inst" target="_blank">Instagram</a>
                         </div>
                     </div>
                 </div>
@@ -45,18 +44,18 @@
             <div class="footer__first-list">
                 <p class="footer__p">Фонд</p>
                 <ul class="footer__list">
-                    <li><a href="#project">О проекте</a></li>
-                    <li><a href="#clubs">Клубы</a></li>
-                    <li><a href="#news">Новости</a></li>
+                    <li><a href="{% url 'app_home:home' %}#project">О проекте</a></li>
+                    <li><a href="{% url 'app_home:home' %}#clubs">Клубы</a></li>
+                    <li><a href="{% url 'app_home:home' %}#news">Новости</a></li>
                 </ul>
             </div>
             <div class="second-list">
                 <p class="footer__p">Справка</p>
                 <ul class="footer__list">
                     <li>
-                        <a href="document.html" target="_blank">Документация</a>
+                        <a href="{% url 'app_home:document' %}" target="_blank">Документация</a>
                     </li>
-                    <li><a href="#news">Вопрос - ответ</a></li>
+                    <li><a href="{% url 'app_home:home' %}#news">Вопрос - ответ</a></li>
                 </ul>
             </div>
         </div>
