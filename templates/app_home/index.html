@@ -137,7 +137,7 @@
                     <select name="region" id="region-select" class="clubs__select">
                         <option value="all">Все</option>
                         {% for club_region in club_regions %}
-                        	<option value="{{ club_region.id }}">{{ club_region.region }}</option>
+                            <option value="{{ club_region.id }}">{{ club_region.region }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -146,7 +146,10 @@
                 <div class="swiper-wrapper swiper-wrapper2 clubs__cards">
                     {% for club in all_clubs %}
                         <div class="swiper-slide swiper-slide2 clubs__card" data-region="{{ club.region.id }}">
-                            <a href="{% url 'app_club:club_info' club.id %}"><img class="slide-img2" src="{% static 'img/club.png' %}" alt="club"/></a>
+                            <a href="{% url 'app_club:club_info' club.id %}">
+                                <img class="slide-img2"
+                                     src="{% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
+                                     alt="club"/></a>
                             <p>Военно-патриотический <br/>клуб “{{ club.name }}”</p>
                         </div>
                     {% endfor %}

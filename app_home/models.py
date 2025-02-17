@@ -1,5 +1,9 @@
+import os
+
 from django.db import models
 from django.urls import reverse
+from django.db.models.signals import pre_save, post_delete
+from django.dispatch import receiver
 
 
 class SocialLink(models.Model):
@@ -58,3 +62,10 @@ class QRCode(models.Model):
 
     def __str__(self):
         return f"QR код: {self.qr_name}"
+
+
+@receiver(post_delete, sender=QRCode)
+def delete_image_on_delete(sender, instance, **kwargs):
+    if instance.img:
+        if os.path.isfile(instance.img.path):
+            os.remove(instance.img.path)

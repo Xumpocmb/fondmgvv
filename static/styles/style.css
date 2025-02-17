@@ -27,7 +27,7 @@ body {
 }
 
 .main-wrapper {
-  background: url("../img/background.png") no-repeat center center fixed;
+  background: url("../img/фон.png") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -1621,7 +1621,7 @@ body {
 }
 .footer__contacts {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr;
 }
 @media (max-width: 1287px) {
