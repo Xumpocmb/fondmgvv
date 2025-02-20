@@ -1,15 +1,16 @@
 {% load static %}
 <div class="main-modal">
     <div class="main-modal__content">
-        <form class="main-modal__form" action="">
+        <form class="main-modal__form" action="{% url 'app_home:send_question_email' %}" method="post">
+            {% csrf_token %}
             <div class="main-modal__close">
                 <img width="23" height="19" src="{% static 'img/close.png' %}" alt="close"/>
             </div>
             <h3 class="main-modal__title">Задайте Ваш вопрос</h3>
             <div class="main-modal__input-area">
-                <input type="text" class="main-modal__input" placeholder="Ваше имя" required/>
-                <input type="email" class="main-modal__input" placeholder="Ваш email" required/>
-                <textarea name="" id="" cols="30" rows="10" class="main-modal__textarea" placeholder="Ваш вопрос" required>
+                <input name="name" type="text" class="main-modal__input" placeholder="Ваше имя" required/>
+                <input name="email" type="email" class="main-modal__input" placeholder="Ваш email" required/>
+                <textarea name="message" id="" cols="30" rows="10" class="main-modal__textarea" placeholder="Ваш вопрос" required>
                 </textarea>
             </div>
             <div class="main-modal__btn-block">

@@ -9,9 +9,9 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ["*"]
-DOMAIN = 'domainname.com'
-SITE_NAME = 'Site Name'
+ALLOWED_HOSTS = ['molodayagvardiya.by', '185.244.50.55', '127.0.0.1', 'localhost', '0.0.0.0']
+DOMAIN = 'molodayagvardiya.by'
+SITE_NAME = 'Молодая Гвардия'
 
 if DEBUG:
     DOMAIN_NAME = 'http://127.0.0.1:8000/'
@@ -106,7 +106,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
