@@ -11,12 +11,12 @@ const swiper = new Swiper(".mySwiper1", {
     modifier: 2,
     slideShadows: true,
   },
-  // loop: true,
-  // loopedSlides: 3,
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
+  loop: true,
+  loopedSlides: 3,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
   slideToClickedSlide: true,
   simulateTouch: true,
 });
