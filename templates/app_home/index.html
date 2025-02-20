@@ -109,7 +109,7 @@
             </div>
             <div class="project__text-block">
                 <p class="project__text">
-                    <span class="project__bold">Фонд ставит перед собой важные задачи:</span>поддерживать организации,
+                    <span class="project__bold">Фонд ставит перед собой важные задачи: </span>поддерживать организации,
                     осуществляющие <br/>патриотическое воспитание молодежи.
                     <span class="project__more-text">Он помогает сохранять память о Великой <br/>Отечественной войне и героическом прошлом белорусского народа,воспитывать уважение <br/>и любовь к Родине. <br/>Кроме того, фонд оказывает поддержку нуждающимся семьям учащихсяклубов и бывшим <br/>военнослужащим, оказавшимся в трудной жизненной ситуации
               </span>
@@ -129,7 +129,7 @@
 
                 <div class="clubs__buttons">
                     <button class="clubs__btn" data-region="all">Все</button>
-                    <button class="clubs__btn" data-city="5">Минск</button>
+                    <button id="minskButton" class="clubs__btn" data-city="5">Минск</button>
                     {% for club_region in club_regions %}
                         <button class="clubs__btn" data-region="{{ club_region.id }}">{{ club_region.region }} обл.
                         </button>

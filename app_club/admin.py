@@ -7,7 +7,7 @@ class ClubSocialLinksInline(admin.StackedInline):
     extra = 1
     verbose_name = "Контакт клуба"
     verbose_name_plural = "Контакты клуба"
-    can_delete = False
+    can_delete = True
 
 class ClubPicturesInline(admin.TabularInline):
     model = ClubPictures

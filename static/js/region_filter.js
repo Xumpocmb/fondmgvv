@@ -24,6 +24,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     buttons.forEach(button => {
         button.addEventListener('click', function () {
+
+            buttons.forEach(btn => {
+                btn.style.backgroundColor = 'white';
+                btn.style.color = 'black';
+            });
+
+            if (this.getAttribute('data-region') === '5') {
+                let minskButton = document.getElementById('minskButton')
+                minskButton.style.backgroundColor = '#328ca7';
+                minskButton.style.color = 'white';
+            }
+
+            this.style.backgroundColor = '#328ca7';
+            this.style.color = 'white';
+
             const regionId = this.getAttribute('data-region');
             const cityID = Number(this.getAttribute('data-city'));
             filterCards(regionId, cityID);

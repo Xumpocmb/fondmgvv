@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load custom_filters %}
 {% block content %}
     <main class="about-main">
         <div class="about__news-page-block">
@@ -7,11 +8,7 @@
                 <div class="club-news__link-block">
                     <img class="club-news__house" src="{% static 'img/house.svg' %}" alt="house-icon"/>
                     <a href="{% url 'app_home:home' %}" class="club-news__link">На главную</a>
-                </div>
-                <div>
                     <span class="club-news__link-span">/</span>
-                </div>
-                <div class="club-news__arrow-span">
                     <span class="club-news__link-span">{{ club.name }}</span>
                 </div>
             </div>
@@ -20,7 +17,7 @@
             <img src="{% static 'img/clubs-banner-img.png' %}" alt="clubs-banner-img"/>
         </div>
         <section class="about">
-            <h1 class="about__title">{{ club.name }}</h1>
+            <h1 class="about__title">Военно-патриотический клуб {{ club.name }}</h1>
             <div class="about__club-text-soc">
                 <div class="about__club-text">
                     <p class="about__text-p">{{ club.military_unit }}</p>
@@ -31,50 +28,72 @@
 
                         {% if club_social_link_inst %}
                             <a class="about__soc-title"
-                               href="{{ club_social_link_inst.social_link }}" target="_blank">
+                               href="{{ club_social_link_inst }}" target="_blank">
                                 <img src="{% static 'img/inst-club.svg' %}" alt="instagram"
-                                     class="about__club-soc-icon"/>Инстаграм</a>
-                        {% elif main_social_links_inst %}
+                                     class="about__club-soc-icon"/>
+                                {% with club_social_link_inst|last_segment:"/" as my_list %}
+                                    <span>{{ my_list|last }}</span>
+                                {% endwith %}</a>
+                        {% elif main_social_link_inst %}
                             <a class="about__soc-title"
-                               href="{{ main_social_links_inst.link_url }}" target="_blank">
+                               href="{{ main_social_link_inst }}" target="_blank">
                                 <img src="{% static 'img/inst-club.svg' %}" alt="instagram"
-                                     class="about__club-soc-icon"/>Инстаграм</a>
+                                     class="about__club-soc-icon"/>
+                            {% with main_social_link_inst|last_segment:"/" as my_list %}
+                                    <span>{{ my_list|last }}</span>
+                                {% endwith %}
+                            </a>
                         {% endif %}
 
                         {% if club_social_link_phone %}
                             <a class="about__soc-title" href="">
-                                <img src="{% static 'img/phone-club.svg' %}" alt="phone"
-                                     class="about__club-soc-icon"/>{{ club_social_link_phone.social_link }}</a>
+                                <img src="{% static 'img/phone-club.png' %}" alt="phone"
+                                     class="about__club-soc-icon"/>{{ club_social_link_phone }}</a>
                         {% elif main_social_link_phone %}
                             <a class="about__soc-title" href="">
-                                <img src="{% static 'img/phone-club.svg' %}" alt="phone"
-                                     class="about__club-soc-icon"/>{{ main_social_link_phone.link_url }}</a>
+                                <img src="{% static 'img/phone-club.png' %}" alt="phone"
+                                     class="about__club-soc-icon"/>{{ main_social_link_phone }}
+                            </a>
                         {% endif %}
 
                         {% if club_social_link_tiktok %}
                             <a class="about__soc-title"
-                               href="{{ club_social_link_tiktok.social_link }}" target="_blank">
+                               href="{{ club_social_link_tiktok }}" target="_blank">
                                 <img src="{% static 'img/tic-toc-club.svg' %}" alt="Tik-Tok"
-                                     class="about__club-soc-icon"/>Tik-Tok</a>
+                                     class="about__club-soc-icon"/>
+                                {% with club_social_link_tiktok|last_segment:"/" as my_list %}
+                                    <span>{{ my_list|last }}</span>
+                                {% endwith %}
+                            </a>
                         {% elif main_social_link_tiktok %}
                             <a class="about__soc-title"
-                               href="{{ main_social_link_tiktok.link_url }}" target="_blank">
+                               href="{{ main_social_link_tiktok }}" target="_blank">
                                 <img src="{% static 'img/tic-toc-club.svg' %}" alt="Tik-Tok"
-                                     class="about__club-soc-icon"/>Tik-Tok</a>
+                                     class="about__club-soc-icon"/>
+                                {% with main_social_link_tiktok|last_segment:"/" as my_list %}
+                                    <span>{{ my_list|last }}</span>
+                                {% endwith %}
+                            </a>
                         {% endif %}
 
                         {% if club_social_link_tg %}
                             <a class="about__soc-title"
-                               href="{{ club_social_link_tg.social_link }}" target="_blank">
+                               href="{{ club_social_link_tg }}" target="_blank">
                                 <img src="{% static 'img/telega-svg.svg' %}" alt="Телеграм"
                                      class="about__club-soc-icon"/>
-                                <span>Телеграм</span></a>
+                                {% with club_social_link_tg|last_segment:"/" as my_list %}
+                                    <span>{{ my_list|last }}</span>
+                                {% endwith %}
+                            </a>
                         {% elif main_social_link_tg %}
                             <a class="about__soc-title"
-                               href="{{ main_social_link_tg.link_url }}" target="_blank">
+                               href="{{ main_social_link_tg }}" target="_blank">
                                 <img src="{% static 'img/telega-svg.svg' %}" alt="Телеграм"
                                      class="about__club-soc-icon"/>
-                                <span>Телеграм</span></a>
+                                {% with main_social_link_tg|last_segment:"/" as my_list %}
+                                    <span>{{ my_list|last }}</span>
+                                {% endwith %}
+                            </a>
                         {% endif %}
 
                     </div>

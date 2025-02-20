@@ -1,4 +1,5 @@
 {% load static %}
+{% load custom_filters %}
 <footer class="footer">
     <div class="footer__first-main-block">
         <div class="footer__contacts-logo-unp">
@@ -22,14 +23,22 @@
                     <div class="footer__icon-row footer__soc-row">
                         <div class="footer__icon-contact">
                             <a href="{{ main_social_link_tg }}"><img width="26" height="25" src="{% static 'img/telegram.svg' %}" alt="telegram" class="footer__soc-icons"/></a>
-                            <a href="{{ main_social_link_tg }}" class="footer__cont footer__telega" target="_blank">Telegram</a>
+                            <a href="{{ main_social_link_tg }}" class="footer__cont footer__telega" target="_blank">
+                                {% with main_social_link_tg|last_segment:"/" as my_list %}
+                                    <span>{{ my_list|last }}</span>
+                                {% endwith %}
+                            </a>
                         </div>
                         <div class="footer__icon-contact">
                             <a href="{{ main_social_link_inst }}">
                                 <img width="26" height="25" src="{% static 'img/instagram.svg' %}" alt="instagram" class="footer__soc-icons"/>
                             </a>
                             <a href="{{ main_social_link_inst }}"
-                               class="footer__cont footer__inst" target="_blank">Instagram</a>
+                               class="footer__cont footer__inst" target="_blank">
+                                {% with main_social_link_inst|last_segment:"/" as my_list %}
+                                    <span>{{ my_list|last }}</span>
+                                {% endwith %}
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+from django.db.models import Case, When, Value, IntegerField
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.core.mail import send_mail
@@ -7,7 +8,12 @@ from app_news.models import News
 
 
 def index(request):
-    club_regions = ClubRegion.objects.all()
+    club_regions = ClubRegion.objects.all().order_by(
+        Case(
+            When(id=5, then=Value(0)),
+            default=Value(1),
+            output_field=IntegerField(),
+        ), 'id')
     all_clubs = Club.objects.all()
     all_news = News.objects.all()
     context = {

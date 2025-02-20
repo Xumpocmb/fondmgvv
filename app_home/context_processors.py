@@ -1,4 +1,3 @@
-from app_club.models import Club, ClubSocialLinks
 from app_home.models import SocialLink, ERIP_link, QRCode
 
 
@@ -12,7 +11,7 @@ def social_links(request):
 
     qr_code = QRCode.objects.first()
 
-    return {
+    context = {
         "main_social_link_inst": main_social_link_inst.link_url if main_social_link_inst else None,
         "main_social_link_phone": main_social_link_phone.link_url if main_social_link_phone else None,
         "main_social_link_tg": main_social_link_tg.link_url if main_social_link_tg else None,
@@ -20,3 +19,5 @@ def social_links(request):
         "erip_link": erip_link.erip_link,
         "qr_code": qr_code,
     }
+
+    return context
