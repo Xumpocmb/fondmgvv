@@ -131,7 +131,8 @@
                     <button class="clubs__btn" data-region="all">Все</button>
                     <button class="clubs__btn" data-city="5">Минск</button>
                     {% for club_region in club_regions %}
-                        <button class="clubs__btn" data-region="{{ club_region.id }}">{{ club_region.region }} обл.</button>
+                        <button class="clubs__btn" data-region="{{ club_region.id }}">{{ club_region.region }} обл.
+                        </button>
                     {% endfor %}
                     <select name="region" id="region-select" class="clubs__select">
                         <option value="all">Все</option>
@@ -145,21 +146,22 @@
                 <div class="swiper-wrapper swiper-wrapper2 clubs__cards">
                     {% for club in all_clubs %}
                         {% if club.city.id == 5 %}
-                            <div class="swiper-slide swiper-slide2 clubs__card" data-city="5" data-region="{{ club.region.id }}">
-                            <a href="{% url 'app_club:club_info' club.id %}">
-                                <img class="slide-img2"
-                                     src="{% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
-                                     alt="club"/></a>
-                            <p>Военно-патриотический <br/>клуб {{ club.name }}</p>
-                        </div>
-                        	{% else %}
+                            <div class="swiper-slide swiper-slide2 clubs__card" data-city="5"
+                                 data-region="{{ club.region.id }}">
+                                <a href="{% url 'app_club:club_info' club.id %}">
+                                    <img class="slide-img2"
+                                         src="{% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
+                                         alt="club"/></a>
+                                <p>Военно-патриотический <br/>клуб {{ club.name }}</p>
+                            </div>
+                        {% else %}
                             <div class="swiper-slide swiper-slide2 clubs__card" data-region="{{ club.region.id }}">
-                            <a href="{% url 'app_club:club_info' club.id %}">
-                                <img class="slide-img2"
-                                     src="{% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
-                                     alt="club"/></a>
-                            <p>Военно-патриотический <br/>клуб {{ club.name }}</p>
-                        </div>
+                                <a href="{% url 'app_club:club_info' club.id %}">
+                                    <img class="slide-img2"
+                                         src="{% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
+                                         alt="club"/></a>
+                                <p>Военно-патриотический <br/>клуб {{ club.name }}</p>
+                            </div>
                         {% endif %}
 
                     {% endfor %}
@@ -214,62 +216,21 @@
             <hr id="line" class="line"/>
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper swiper-wrapper3 news__cards">
-                    <div class="swiper-slide swiper-slide3 news__card">
-                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
-                        <div class="news__text">
-                            <span class="news__data">22.10.2024</span>
-                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
+                    {% for news in all_news %}
+                        <div class="swiper-slide swiper-slide3 news__card">
+                            <a href="{% url 'app_news:news' news.id %}">
+                                {% if news.main_picture %}
+                                	<img src="{{ news.main_picture.url }}" alt="news-img"/>
+                                    {% else %}
+                                    <img src="{% static 'img/news.png' %}" alt="news-img"/>
+                                {% endif %}
+                            </a>
+                            <div class="news__text">
+                                <span class="news__data">{{ news.created_at }}</span>
+                                <p class="news__p">{{ news.title }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide3 news__card">
-                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
-                        <div class="news__text">
-                            <span class="news__data">22.10.2024</span>
-                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide3 news__card">
-                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
-                        <div class="news__text">
-                            <span class="news__data">22.10.2024</span>
-                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide3 news__card">
-                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
-                        <div class="news__text">
-                            <span class="news__data">22.10.2024</span>
-                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide3 news__card">
-                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
-                        <div class="news__text">
-                            <span class="news__data">22.10.2024</span>
-                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide3 news__card">
-                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
-                        <div class="news__text">
-                            <span class="news__data">22.10.2024</span>
-                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide3 news__card">
-                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
-                        <div class="news__text">
-                            <span class="news__data">22.10.2024</span>
-                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide3 news__card">
-                        <img src="{% static 'img/news.png' %}" alt="news-img"/>
-                        <div class="news__text">
-                            <span class="news__data">22.10.2024</span>
-                            <p class="news__p">Военно-патриотическому <br/>клубу «Рысь» - 3 года!</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="swiper-button-prev swiper-button-prev-2"></div>
                 <div class="swiper-button-next swiper-button-next-2"></div>

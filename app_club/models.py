@@ -93,47 +93,16 @@ class Club(models.Model):
     def save(self, *args, **kwargs):
         if self.pk is not None:
             original = Club.objects.get(pk=self.pk)
-            if original.main_picture != self.main_picture:
+            if original.main_picture != self.main_picture and self.main_picture.size > 1 * 1024 * 1024:
                 self.main_picture = compress_image(self.main_picture)
         else:
-            if self.main_picture:
+            if self.main_picture and self.main_picture.size > 1 * 1024 * 1024:
                 self.main_picture = compress_image(self.main_picture)
 
         super(Club, self).save(*args, **kwargs)
 
 
-@receiver(pre_save, sender=Club)
-def delete_old_main_picture(sender, instance, **kwargs):
-    """
-    Этот сигнал вызывается перед сохранением объекта. В обработчике сигнала мы проверяем, существует ли уже сохраненное изображение, и если оно отличается от нового, удаляем старый файл.
-    :param sender:
-    :param instance:
-    :param kwargs:
-    :return:
-    """
-    if instance.pk:
-        try:
-            old_instance = Club.objects.get(pk=instance.pk)
-            if old_instance.main_picture and old_instance.main_picture != instance.main_picture:
-                if os.path.isfile(old_instance.main_picture.path):
-                    os.remove(old_instance.main_picture.path)
-        except Club.DoesNotExist:
-            pass
 
-
-@receiver(post_delete, sender=Club)
-def delete_main_picture_on_delete(sender, instance, **kwargs):
-    """
-    Этот сигнал вызывается после удаления объекта. В обработчике сигнала мы удаляем файл изображения, если объект удален.
-    :param sender:
-    :param instance:
-    :param kwargs:
-    :return:
-    """
-    # Удаляем файл при удалении объекта
-    if instance.main_picture:
-        if os.path.isfile(instance.main_picture.path):
-            os.remove(instance.main_picture.path)
 
 
 class ClubSocialLinks(models.Model):
@@ -172,10 +141,10 @@ class ClubPictures(models.Model):
     def save(self, *args, **kwargs):
         if self.pk is not None:
             original = ClubPictures.objects.get(pk=self.pk)
-            if original.img != self.img:
+            if original.img != self.img and self.img.size > 1 * 1024 * 1024:
                 self.img = compress_image(self.img)
         else:
-            if self.img:
+            if self.img and self.img.size > 1 * 1024 * 1024:
                 self.img = compress_image(self.img)
 
         super(ClubPictures, self).save(*args, **kwargs)
@@ -186,3 +155,37 @@ def delete_image_on_delete(sender, instance, **kwargs):
     if instance.img:
         if os.path.isfile(instance.img.path):
             os.remove(instance.img.path)
+
+
+@receiver(pre_save, sender=Club)
+def delete_old_main_picture(sender, instance, **kwargs):
+    """
+    Этот сигнал вызывается перед сохранением объекта. В обработчике сигнала мы проверяем, существует ли уже сохраненное изображение, и если оно отличается от нового, удаляем старый файл.
+    :param sender:
+    :param instance:
+    :param kwargs:
+    :return:
+    """
+    if instance.pk:
+        try:
+            old_instance = Club.objects.get(pk=instance.pk)
+            if old_instance.main_picture and old_instance.main_picture != instance.main_picture:
+                if os.path.isfile(old_instance.main_picture.path):
+                    os.remove(old_instance.main_picture.path)
+        except Club.DoesNotExist:
+            pass
+
+
+@receiver(post_delete, sender=Club)
+def delete_main_picture_on_delete(sender, instance, **kwargs):
+    """
+    Этот сигнал вызывается после удаления объекта. В обработчике сигнала мы удаляем файл изображения, если объект удален.
+    :param sender:
+    :param instance:
+    :param kwargs:
+    :return:
+    """
+    # Удаляем файл при удалении объекта
+    if instance.main_picture:
+        if os.path.isfile(instance.main_picture.path):
+            os.remove(instance.main_picture.path)

@@ -1,0 +1,107 @@
+.question {
+  padding: 0 40px 0 40px;
+  margin-top: 75.12px;
+  height: 374px;
+  background-color: white;
+
+  @include media-small-desctop {
+    padding: 0 10px 0 10px;
+    height: 250px;
+    margin-top: 30px;
+  }
+
+  &__main-block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 128.58px;
+  }
+
+  &__title {
+    @include font($height: 100%, $size: 25px, $weight: 400);
+    font-family: $font-family;
+    text-transform: uppercase;
+    color: #328ca7;
+    padding-top: 30.08px;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 400);
+    }
+  }
+
+  hr {
+    background-color: #328ca7;
+    height: 2px;
+    margin: 0;
+  }
+
+  &__p {
+    @include font($height: 100%, $size: 26px, $weight: 300);
+    font-family: $font-family;
+    margin: 0;
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12.75px, $weight: 300);
+    }
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 1;
+    @include font($height: 110%, $size: 25px, $weight: 400);
+    font-family: $font-family;
+    border: 1px solid #f26c4f;
+    border-radius: 40px;
+    padding: 15px 30px;
+    color: #f26c4f;
+    background: white;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: all 0.3s ease;
+        background: #f26c4f;
+        color: white;
+      }
+    }
+
+    @media (hover: none) {
+      &:active {
+        transform: all 0.3s ease;
+        background: #f26c4f;
+        color: white;
+      }
+    }
+
+    @include media-small-desctop {
+      @include font($height: 170%, $size: 12px, $weight: 400);
+      border-radius: 20px;
+      padding: 1px 10px;
+      top: 21px;
+    }
+  }
+}
+
+.accordion {
+  width: 488px;
+  height: 184px;
+  position: relative;
+  z-index: 2;
+
+  @include media-small-desctop {
+    width: 177px;
+    height: 120px;
+  }
+}
+
+#btn {
+  @include font($height: 100%, $size: 18px, $weight: 400);
+  @include media-small-desctop {
+    @include font($height: 100%, $size: 12px, $weight: 400);
+    padding: 8px;
+  }
+}
+
+#body {
+  @include media-small-desctop {
+    @include font($height: 100%, $size: 11px, $weight: 400);
+  }
+}

@@ -1,0 +1,350 @@
+.clubs {
+  padding: 77.65px 42px 0 42px;
+  @include media-small-desctop {
+    padding: 0 10px 0 10px;
+  }
+
+  &__main-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 39.54px;
+  }
+
+  &__title {
+    @include font($height: 100%, $size: 25px, $weight: 400);
+    font-family: $font-family;
+    text-transform: uppercase;
+    color: #328ca7;
+    margin: 0;
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 400);
+    }
+  }
+
+  &__erip-second-title {
+    @include font($height: 100%, $size: 30px, $weight: 400);
+    font-family: $third-family;
+    text-transform: lowercase;
+    text-align: right;
+    color: #f26c4f;
+    margin-top: 9.96px;
+    letter-spacing: 2.8px;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 400);
+      letter-spacing: 1.1px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__p {
+    @include font($height: 108%, $size: 25px, $weight: 300);
+    font-family: $font-family;
+    color: #333;
+    margin: 0;
+
+    span {
+      @include font($height: 108%, $size: 25px, $weight: 400);
+      font-family: $font-family;
+      color: #333;
+
+      @include media-small-desctop {
+        @include font($height: 108%, $size: 12px, $weight: 400);
+      }
+    }
+
+    @include media-small-desctop {
+      @include font($height: 108%, $size: 12px, $weight: 300);
+    }
+  }
+
+  &__buttons {
+    width: 497px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+
+    @include media-small-desctop {
+      width: 138px;
+    }
+  }
+
+  &__btn {
+    @include font($height: 110%, $size: 16px, $weight: 400);
+    font-family: $font-family;
+    color: #000;
+    text-align: center;
+    border-radius: 40px;
+    width: 137px;
+    height: 35px;
+    cursor: pointer;
+    background: none;
+    border: 1.52px solid #328ca7;
+
+    &:hover {
+      transition: all 0.3s ease;
+      background-color: #328ca7;
+      color: #fff;
+    }
+
+    @include media-small-desctop {
+      display: none;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    overflow-x: auto;
+    gap: 36px;
+
+    &::-webkit-scrollbar {
+      height: 12px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+      border-radius: 10px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: end;
+    margin-top: 19.64px;
+    border-radius: 2px;
+    width: 300px;
+    height: 298px;
+    background: linear-gradient(
+        180deg,
+        rgba(217, 217, 217, 0) 0%,
+        rgba(81, 155, 178, 0.7) 134.37%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url("../img/club.png") no-repeat center center;
+    background-size: cover;
+    cursor: pointer;
+
+    p {
+      @include font($height: 100%, $size: 24px, $weight: 400);
+      font-family: $font-family;
+      color: #fff;
+      padding-bottom: 15.66px;
+      margin: 0;
+
+      @include media-small-desctop {
+        @include font($height: 100%, $size: 14px, $weight: 400);
+      }
+    }
+
+    @include media-small-desctop {
+      border-radius: 1px;
+      width: 172px;
+      height: 172px;
+    }
+  }
+
+  &__qr {
+    @include media-small-desctop {
+      width: 58px;
+      height: 55px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__text-qr-block {
+    display: flex;
+    gap: 5.66px;
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  &__text {
+    @include font($height: 100%, $size: 24px, $weight: 300);
+    font-family: $font-family;
+    text-align: justify;
+    color: #333;
+    margin-top: 17.52px;
+    margin-bottom: 0;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 300);
+    }
+  }
+
+  &__erip {
+    position: relative;
+    background: url("../img/army.png") no-repeat center center;
+    border-radius: 45px;
+    width: 794px;
+    height: 405px;
+    margin: 90px auto;
+    overflow: hidden;
+
+    @include media-small-desctop {
+      border-radius: 17px;
+      width: 301px;
+      height: 158px;
+      margin: 30px auto;
+    }
+  }
+
+  &__erip-block {
+    display: flex;
+  }
+
+  &__girl {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    @include media-small-desctop {
+      width: 137px;
+      height: 154px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__erip-title {
+    @include font($height: 100%, $size: 40px, $weight: 400);
+    font-family: $third-family;
+    text-transform: uppercase;
+    text-align: right;
+    letter-spacing: 2.9px;
+    color: #223e4c;
+    margin: 0;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 16px, $weight: 400);
+      text-align: left;
+      letter-spacing: 1.1px;
+    }
+  }
+
+  &__erip-p1 {
+    @include font($height: 100%, $size: 21px, $weight: 400);
+    font-family: $font-family;
+    letter-spacing: -0.02em;
+    color: #333;
+    margin: 0;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 400);
+    }
+  }
+
+  &__erip-p2 {
+    @include font($height: 100%, $size: 16px, $weight: 300);
+    font-family: $font-family;
+    letter-spacing: -0.02em;
+    color: #333;
+    margin: 0;
+
+    @include media-small-desctop {
+      display: none;
+    }
+  }
+
+  &__text-qr {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    padding: 32px 0 31.7px 25.7px;
+
+    @include media-small-desctop {
+      padding: 10px 0 12px 10px;
+    }
+  }
+
+  &__erip-btn-block {
+    margin-top: 25.13px;
+    padding-left: 110px;
+
+    @include media-small-desctop {
+      margin-top: 8px;
+      padding-left: 30px;
+    }
+  }
+
+  &__erip-btn {
+    @include font($height: 110%, $size: 25px, $weight: 400);
+    font-family: $font-family;
+    border-radius: 40px;
+    padding: 15px 30px;
+    color: #fffdfd;
+    background: #f26c4f;
+    border: none;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: all 0.3s ease;
+        background: #e7421c;
+      }
+    }
+
+    @media (hover: none) {
+      &:active {
+        transform: all 0.3s ease;
+        background: #e7421c;
+      }
+    }
+
+    @include media-small-desctop {
+      @include font($height: 110%, $size: 12px, $weight: 400);
+      border-radius: 20px;
+      padding: 9px 18px;
+    }
+  }
+
+  &__adaptive-br {
+    display: none;
+
+    @include media-small-desctop {
+      display: block;
+    }
+  }
+
+  &__select {
+    @include font($height: 110%, $size: 16px, $weight: 400);
+    font-family: $font-family;
+    color: #000;
+    text-align: center;
+    border-radius: 40px;
+    background: none;
+    width: 137px;
+    height: 35px;
+    cursor: pointer;
+    border: 1.52px solid #328ca7;
+    display: none;
+
+    @include media-small-desctop {
+      display: block;
+      @include font($height: 110%, $size: 12px, $weight: 400);
+      border-radius: 20px;
+      height: 30px;
+    }
+  }
+}

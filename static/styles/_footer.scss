@@ -1,0 +1,185 @@
+.footer {
+  padding: 20px 40px 20px 40px;
+  margin-top: 50px;
+  background: #223e4c;
+
+  @include media-small-desctop {
+    padding: 5px 10px 5px 10px;
+    margin-top: 30.5px;
+  }
+  &__contacts-logo {
+    display: flex;
+    align-items: center;
+    gap: 9.99px;
+
+    @include media-small-desctop {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__logo-block {
+    @include media-small-desctop {
+      width: 36px;
+      height: 31px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    @include media-small-desctop {
+      grid-template-columns: 1fr;
+      gap: 3px;
+    }
+  }
+
+  &__icon-contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__soc-row {
+    display: grid;
+    @include media-small-desctop {
+      grid-template: 1fr / 1fr 1fr;
+    }
+  }
+
+  &__cont {
+    margin: 0;
+    @include font($height: 180%, $size: 24px, $weight: 500);
+    font-family: $font-family;
+    color: #b4b4b4;
+    text-decoration: none;
+
+    &:hover {
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    @include media-small-desctop {
+      @include font($height: 180%, $size: 12px, $weight: 500);
+    }
+  }
+
+  &__first-main-block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+
+    a {
+      text-decoration: none;
+      @include font($height: 150%, $size: 21px, $weight: 400);
+      font-family: $font-family;
+      color: white;
+
+      &:hover {
+        transition: all 0.3s ease;
+        color: #b4b4b4;
+      }
+
+      @include media-small-desctop {
+        @include font($height: 150%, $size: 11px, $weight: 400);
+      }
+    }
+  }
+
+  &__p {
+    @include font($height: 150%, $size: 25px, $weight: 600);
+    font-family: $font-family;
+    color: white;
+    margin: 0;
+
+    @include media-small-desctop {
+      @include font($height: 150%, $size: 13px, $weight: 600);
+    }
+  }
+
+  &__link-list-block {
+    display: flex;
+    gap: 80.01px;
+
+    @include media-small-desctop {
+      gap: 20px;
+    }
+  }
+
+  &__unp-text {
+    @include font($height: 140%, $size: 12px, $weight: 400);
+    font-family: $font-family;
+    color: #b4b4b4;
+    margin-top: 10px;
+
+    @include media-small-desctop {
+      @include font($height: 150%, $size: 6px, $weight: 400);
+      width: 140px;
+    }
+  }
+
+  &__second-main-block {
+    hr {
+      margin-top: 6px;
+      margin-bottom: 0;
+      background: #b4b4b4;
+    }
+  }
+
+  &__second-block {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+
+    p {
+      @include font($height: 140%, $size: 12px, $weight: 400);
+      font-family: $second-family;
+      color: #b4b4b4;
+      margin: 7.11px 0;
+
+      @include media-small-desctop {
+        @include font($height: 140%, $size: 7px, $weight: 400);
+      }
+    }
+  }
+
+  &__telega {
+    @include media-small-desctop {
+      display: none;
+    }
+  }
+
+  &__inst {
+    @include media-small-desctop {
+      display: none;
+    }
+  }
+
+  &__icons {
+    @include media-small-desctop {
+      display: none;
+    }
+  }
+
+  &__soc-icons {
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+    }
+  }
+}

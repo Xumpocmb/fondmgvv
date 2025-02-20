@@ -1,0 +1,132 @@
+.about {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px 0 40px;
+
+  @include media-small-desctop {
+    padding: 0 10px 0 10px;
+  }
+
+  &__news-page-block {
+    padding-left: 225px;
+
+    @include media-small-desctop {
+      padding-left: 10px;
+    }
+  }
+
+  &__title {
+    @include font($height: 100%, $size: 35px, $weight: 400);
+    font-family: $third-family;
+    letter-spacing: -0.01em;
+    color: #f26c4f;
+    border-bottom: 3px solid #f26c4f;
+    width: 100%;
+    margin-top: 60px;
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 15px, $weight: 400);
+      border-bottom: 2px solid #f26c4f;
+      margin-top: 14px;
+    }
+  }
+
+  &__banner-block {
+    width: 100%;
+    margin-top: 9px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__club-text-soc {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 37px;
+  }
+
+  &__club-soc {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    column-gap: 98px;
+    row-gap: 13px;
+
+    @include media-small-desctop {
+      grid-template: 1fr / 1fr;
+      gap: 5px;
+    }
+  }
+
+  &__soc-title {
+    @include font($height: 100%, $size: 25px, $weight: 500);
+    font-family: $font-family;
+    text-align: center;
+    color: #85a9b5;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 500);
+    }
+  }
+
+  &__club-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__text-p {
+    @include font($height: 100%, $size: 24px, $weight: 400);
+    font-family: $font-family;
+    color: #333;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 13px, $weight: 400);
+    }
+  }
+
+  &__h2 {
+    @include font($height: 100%, $size: 25px, $weight: 400);
+    font-family: $font-family;
+    text-transform: uppercase;
+    color: #328ca7;
+    border-bottom: 2px solid #328ca7;
+    width: 100%;
+    margin-top: 100px;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 400);
+      border-bottom: 1px solid #328ca7;
+      margin-top: 20px;
+    }
+  }
+
+  &__about-text {
+    @include font($height: 100%, $size: 24px, $weight: 400);
+    font-family: $font-family;
+    text-align: justify;
+    color: #333;
+    margin: 30px 0 30px 0;
+
+    @include media-small-desctop {
+      @include font($height: 100%, $size: 12px, $weight: 400);
+      margin: 18px 0 18px 0;
+    }
+  }
+
+  &__club-soc-icon {
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+    }
+
+    @include media-small-desctop {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

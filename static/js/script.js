@@ -100,8 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
   readMoreButton.addEventListener("click", () => {
     if (isTextVisible) {
       moreText.style.display = "none";
+      readMoreButton.textContent = "Читать полностью";
+      readMoreButton.classList.remove("expanded");
     } else {
       moreText.style.display = "inline";
+      readMoreButton.textContent = "Скрыть";
+      readMoreButton.classList.add("expanded");
     }
     isTextVisible = !isTextVisible;
   });
