@@ -8,7 +8,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app_home.urls')),
     path('club/', include('app_club.urls')),
+    path('news/', include('app_news.urls')),
 ]
+
+handler404 = 'app_home.views.custom_404_view'
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

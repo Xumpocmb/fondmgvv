@@ -15,3 +15,6 @@ def index(request):
 
 def get_document(request):
     return render(request, 'app_home/document.html')
+
+def custom_404_view(request, exception):
+    return render(request, 'app_home/404.html')
