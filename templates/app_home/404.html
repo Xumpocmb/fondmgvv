@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    <style>
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .main {
+            flex: 1;
+        }
+    </style>
     <main class="main">
         <section class="club-news">
             <div class="club-news__page-link">
