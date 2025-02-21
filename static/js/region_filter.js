@@ -5,15 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const clubSwiper = document.getElementById('clubSwiper')
 
     function filterCards(regionId, cityId) {
-        console.log(regionId, cityId)
         cards.forEach(card => {
             if (regionId === 'all') {
                 card.style.display = 'block';
             } else if (card.getAttribute('data-city') == cityId) {
-                console.log("фильтр по сити")
                 card.style.display = 'block';
             } else if (card.getAttribute('data-region') === regionId) {
-                console.log("фильтр по регион")
                 card.style.display = 'block';
             } else {
                 card.style.display = 'none';
@@ -46,8 +43,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     select.addEventListener('change', function () {
-        const regionId = this.value;
-        const cityID = this.value;
+        let regionId = this.value
+        let cityID = Number(this.getAttribute('data-city'));
+        if (regionId === 'minsk') {
+            regionId = '0';
+            cityID = 5;
+        }
+
         filterCards(regionId, cityID);
     });
 

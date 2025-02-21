@@ -136,6 +136,7 @@
                     {% endfor %}
                     <select name="region" id="region-select" class="clubs__select">
                         <option value="all">Все</option>
+                        <option id="minskButton" value="minsk" data-city="5">Минск</option>
                         {% for club_region in club_regions %}
                             <option value="{{ club_region.id }}">{{ club_region.region }}</option>
                         {% endfor %}
