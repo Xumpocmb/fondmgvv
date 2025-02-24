@@ -106,7 +106,7 @@
             <div class="club-news__img-blocks">
                 {% for picture in club.other_pictures.all %}
                     <div class="club-news__img-block">
-                        <img style="height: 205px" src="{{ picture.img.url }}" alt="news-img"/>
+                        <img src="{{ picture.img.url }}" alt="news-img"/>
                     </div>
                 {% endfor %}
             </div>
