@@ -2485,7 +2485,7 @@ body {
 }
 
 .about__news-page-block {
-    padding-left: 225px;
+    padding-left: 3vw;
 }
 
 @media (max-width: 768px) {
