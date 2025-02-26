@@ -14,7 +14,7 @@ const swiper = new Swiper(".mySwiper1", {
   loop: true,
   loopedSlides: 3,
   autoplay: {
-    delay: 3000,
+    delay: 9000,
     disableOnInteraction: false,
   },
   slideToClickedSlide: true,

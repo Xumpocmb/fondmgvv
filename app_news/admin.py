@@ -5,7 +5,7 @@ from app_news.models import News, NewsPictures
 
 class NewsPicturesInline(admin.TabularInline):
     model = NewsPictures
-    extra = 1  # Количество пустых форм для добавления новых картинок
+    extra = 1
     verbose_name = "Доп. картинка новости"
     verbose_name_plural = "Доп. картинки новости"
 

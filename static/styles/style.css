@@ -2244,6 +2244,10 @@ body {
     gap: 5px;
 }
 
+.club-news__house {
+    height: 22px;
+}
+
 @media (max-width: 768px) {
     .club-news__house {
         width: 25px;
@@ -2264,7 +2268,7 @@ body {
 }
 
 .club-news__link {
-    font-size: 25px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 100%;
@@ -2283,7 +2287,7 @@ body {
 }
 
 .club-news__link-span {
-    font-size: 25px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 100%;
