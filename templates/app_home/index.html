@@ -147,22 +147,28 @@
                 <div class="swiper-wrapper swiper-wrapper2 clubs__cards">
                     {% for club in all_clubs %}
                         {% if club.city.id == 5 %}
-                            <div class="swiper-slide swiper-slide2 clubs__card" data-city="5"
-                                 data-region="{{ club.region.id }}">
-                                <a href="{% url 'app_club:club_info' club.id %}">
+                            <a href="{% url 'app_club:club_info' club.id %}">
+                                <div class="swiper-slide swiper-slide2 clubs__card" data-city="5"
+                                     data-region="{{ club.region.id }}">
+
                                     <img class="slide-img2"
-                                         src="{% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
-                                         alt="club"/></a>
-                                <p>Военно-патриотический <br/>клуб {{ club.name }}</p>
-                            </div>
+                                         src="
+
+                                                 {% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
+                                         alt="club"/>
+                                    <p>Военно-патриотический <br/>клуб {{ club.name }}</p>
+                                </div>
+                            </a>
                         {% else %}
-                            <div class="swiper-slide swiper-slide2 clubs__card" data-region="{{ club.region.id }}">
-                                <a href="{% url 'app_club:club_info' club.id %}">
+                            <a href="{% url 'app_club:club_info' club.id %}">
+                                <div class="swiper-slide swiper-slide2 clubs__card" data-region="{{ club.region.id }}">
+
                                     <img class="slide-img2"
                                          src="{% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
-                                         alt="club"/></a>
-                                <p>Военно-патриотический <br/>клуб {{ club.name }}</p>
-                            </div>
+                                         alt="club"/>
+                                    <p>Военно-патриотический <br/>клуб {{ club.name }}</p>
+                                </div>
+                            </a>
                         {% endif %}
 
                     {% endfor %}
@@ -221,8 +227,8 @@
                         <div class="swiper-slide swiper-slide3 news__card">
                             <a href="{% url 'app_news:news' news.id %}">
                                 {% if news.main_picture %}
-                                	<img src="{{ news.main_picture.url }}" alt="news-img"/>
-                                    {% else %}
+                                    <img src="{{ news.main_picture.url }}" alt="news-img"/>
+                                {% else %}
                                     <img src="{% static 'img/news.png' %}" alt="news-img"/>
                                 {% endif %}
                             </a>
@@ -258,7 +264,7 @@
                                 <div id="flush-collapseOne" class="accordion-collapse collapse"
                                      aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div id="body" class="accordion-body">Необходимо обратиться к руководителю клуба, в
-                                        котором хочет заниматься ребенок. На каждой странице<a href="#clubs">клуба</a>
+                                        котором хочет заниматься ребенок. На каждой странице <a href="#clubs">клуба</a>
                                         размещены контактные данные, где можно узнать необходимую информацию. Также
                                         можно
                                         обратиться в дежурную часть внутренних войск населенного пункта, где примут
@@ -315,6 +321,5 @@
 {% block scripts %}
     <script src="{% static 'js/region_filter.js' %}"></script>
     <script src="{% static 'js/slider.js' %}"></script>
-    <script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
 

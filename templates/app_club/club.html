@@ -46,11 +46,13 @@
                         {% endif %}
 
                         {% if club_social_link_phone %}
-                            <a class="about__soc-title" href="">
+                            <a class="about__soc-title copy-to-clipboard"
+                               data-copy="{{ club_social_link_phone }}" href="">
                                 <img src="{% static 'img/phone-club.png' %}" alt="phone"
                                      class="about__club-soc-icon"/>{{ club_social_link_phone }}</a>
                         {% elif main_social_link_phone %}
-                            <a class="about__soc-title" href="">
+                            <a class="about__soc-title copy-to-clipboard"
+                               data-copy="{{ main_social_link_phone }}" href="">
                                 <img src="{% static 'img/phone-club.png' %}" alt="phone"
                                      class="about__club-soc-icon"/>{{ main_social_link_phone }}
                             </a>

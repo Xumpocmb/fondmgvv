@@ -1,29 +1,36 @@
-function copyTextToClipboard(text) {
-  navigator.clipboard
-    .writeText(text)
-    .then(() => {
-      alert("Скопировано в буфер обмена");
-    })
-    .catch((err) => {
-      console.error("Ошибка копирования: ", err);
-    });
-}
-
-//Обработчик события для всех элементов с классом 'copy-to-clipboard'
 document.addEventListener("DOMContentLoaded", () => {
   const copyElements = document.querySelectorAll(".copy-to-clipboard");
   copyElements.forEach((element) => {
     element.addEventListener("click", (event) => {
       event.preventDefault();
       const textToCopy = element.getAttribute("data-copy");
-      if (textToCopy) {
-        copyTextToClipboard(textToCopy);
+      if (window.innerWidth <= 768) {
+        if (textToCopy) {
+          window.location.href = window.location.href = `tel:${textToCopy}`;
+        } else {
+          console.error("Атрибут 'data-copy' не найден");
+        }
       } else {
-        console.error("Атрибут 'data-copy' не найден");
+        if (textToCopy) {
+          copyTextToClipboard(textToCopy);
+        } else {
+          console.error("Атрибут 'data-copy' не найден");
+        }
       }
     });
   });
 });
+
+function copyTextToClipboard(text) {
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      alert("Текст скопирован в буфер обмена");
+    })
+    .catch((err) => {
+      console.error("Не удалось скопировать текст: ", err);
+    });
+}
 
 //Модальное окно
 document.addEventListener("DOMContentLoaded", () => {
@@ -45,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const burgerItem = document.querySelector(".header__burger");
   const menu = document.querySelector(".header__nav");
   const menuCloseItem = document.querySelector(".header__nav-close");
+  const menuLinks = document.querySelectorAll(".header__nav a");
   burgerItem.addEventListener("click", () => {
     menu.classList.add("header__nav-active");
     menuCloseItem.classList.add("open-close-item");
@@ -55,6 +63,14 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.remove("header__nav-active");
     menuCloseItem.classList.remove("open-close-item");
     burgerItem.classList.remove("close-burger-item");
+  });
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("header__nav-active");
+      menuCloseItem.classList.remove("open-close-item");
+      burgerItem.classList.remove("close-burger-item");
+    });
   });
 })();
 
@@ -92,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     videoLink.style.display = "block";
   });
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   const readMoreButton = document.querySelector(".project__read-more");
   const moreText = document.querySelector(".project__more-text");
