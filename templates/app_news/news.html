@@ -16,7 +16,7 @@
 
                 <img class="club-news__line" src="{% static 'img/line.svg' %}" alt="line"/>
 
-                <p class="club-news__p">{{ news.created_at }}</p>
+                <p class="club-news__p">{{ news.created_at|date:"d.m.Y" }}</p>
             </div>
             <h1 class="club-news__main-title">{{ news.title }}</h1>
             {% if news.main_picture %}

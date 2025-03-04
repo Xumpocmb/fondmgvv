@@ -3,6 +3,7 @@ import os
 from django.db import models
 from django.db.models.signals import pre_save, post_delete
 from django.dispatch import receiver
+from django.utils import timezone
 
 from app_club.models import ClubCity, ClubRegion, generate_unique_filename, compress_image
 
@@ -21,7 +22,7 @@ class News(models.Model):
     main_picture = models.ImageField(upload_to=news_main_photos_path, blank=True, null=True,
                                      verbose_name="Главная картинка новости")
 
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания", blank=True, null=True)
+    created_at = models.DateTimeField(default=timezone.now, verbose_name="Дата создания", blank=True, null=True, editable=True)
     updated_at = models.DateTimeField(auto_now=True, )
 
     def __str__(self):

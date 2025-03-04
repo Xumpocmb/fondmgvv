@@ -27,6 +27,10 @@ body {
     height: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+
 .main-wrapper {
     background: url("../img/background.png") no-repeat center center fixed;
     background-size: cover;
@@ -509,7 +513,7 @@ body {
 
 @media (max-width: 768px) {
     .banner__title-h1 {
-        top: 72%;
+        top: 80%;
     }
 }
 

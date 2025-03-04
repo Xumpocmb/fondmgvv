@@ -147,28 +147,29 @@
                 <div class="swiper-wrapper swiper-wrapper2 clubs__cards">
                     {% for club in all_clubs %}
                         {% if club.city.id == 5 %}
-                            <a href="{% url 'app_club:club_info' club.id %}">
-                                <div class="swiper-slide swiper-slide2 clubs__card" data-city="5"
-                                     data-region="{{ club.region.id }}">
 
+                            <div class="swiper-slide swiper-slide2 clubs__card" data-city="5"
+                                 data-region="{{ club.region.id }}">
+                                <a href="{% url 'app_club:club_info' club.id %}">
                                     <img class="slide-img2"
                                          src="
-
                                                  {% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
                                          alt="club"/>
                                     <p>Военно-патриотический <br/>клуб {{ club.name }}</p>
-                                </div>
-                            </a>
-                        {% else %}
-                            <a href="{% url 'app_club:club_info' club.id %}">
-                                <div class="swiper-slide swiper-slide2 clubs__card" data-region="{{ club.region.id }}">
+                                </a>
+                            </div>
 
+                        {% else %}
+
+                                <div class="swiper-slide swiper-slide2 clubs__card" data-region="{{ club.region.id }}">
+                                <a href="{% url 'app_club:club_info' club.id %}">
                                     <img class="slide-img2"
                                          src="{% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
                                          alt="club"/>
                                     <p>Военно-патриотический <br/>клуб {{ club.name }}</p>
+                                </a>
                                 </div>
-                            </a>
+
                         {% endif %}
 
                     {% endfor %}
@@ -224,6 +225,7 @@
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper swiper-wrapper3 news__cards">
                     {% for news in all_news %}
+
                         <div class="swiper-slide swiper-slide3 news__card">
                             <a href="{% url 'app_news:news' news.id %}">
                                 {% if news.main_picture %}
@@ -231,12 +233,14 @@
                                 {% else %}
                                     <img src="{% static 'img/news.png' %}" alt="news-img"/>
                                 {% endif %}
+
+                                <div class="news__text">
+                                    <span class="news__data">{{ news.created_at|date:"d.m.Y" }}</span>
+                                    <p class="news__p">{{ news.title }}</p>
+                                </div>
                             </a>
-                            <div class="news__text">
-                                <span class="news__data">{{ news.created_at }}</span>
-                                <p class="news__p">{{ news.title }}</p>
-                            </div>
                         </div>
+
                     {% endfor %}
                 </div>
                 <div class="swiper-button-prev swiper-button-prev-2"></div>
