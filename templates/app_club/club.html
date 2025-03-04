@@ -14,7 +14,10 @@
             </div>
         </div>
         <div class="about__banner-block">
-            <img src="{% static 'img/clubs-banner-img.png' %}" alt="clubs-banner-img"/>
+            <picture>
+            <source srcset="{% static 'img/clubs-banner-img.png' %}" media="(max-width: 768px)"/>
+            <img src="{% static 'img/club_banner3.jpg' %}" alt="clubs-banner-img" />
+          </picture>
         </div>
         <section class="about">
             <h1 class="about__title">Военно-патриотический клуб {{ club.name }}</h1>
