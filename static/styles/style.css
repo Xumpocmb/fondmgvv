@@ -698,16 +698,22 @@ a {
 }
 
 .project__second-block {
-    display: flex;
-    flex-direction: column;
-    gap: 54px;
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+  width: 35%;
 }
 
+
 @media (max-width: 768px) {
-    .project__second-block {
-        margin-top: 8px;
-    }
+  .project__second-block {
+    margin-top: 8px;
+    width: 65%;
+    margin-left: 11%;
+    display: inline-block;
+  }
 }
+
 
 .project__time {
     font-size: 35px;
@@ -2720,3 +2726,23 @@ a {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+
+#icon9may {
+  width: 10%;
+}
+
+@media (max-width: 638px) {
+  #icon9may {
+    width: 15%;
+    margin-top: -8%;
+  }
+}
+
+@media (max-width: 429px) {
+  #icon9may {
+    width: 22%;
+    margin-top: -15%;
+  }
+}
