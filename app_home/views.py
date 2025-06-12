@@ -15,11 +15,13 @@ def index(request):
             output_field=IntegerField(),
         ), 'id')
     all_clubs = Club.objects.all()
-    all_news = News.objects.all()
+    clubs_count = Club.objects.count()
+    all_news = News.objects.all().order_by('-created_at')
     context = {
         'all_clubs': all_clubs,
         'club_regions': club_regions,
-        'all_news': all_news
+        'all_news': all_news,
+        'clubs_count': clubs_count,
     }
     return render(request, 'app_home/index.html', context)
 
