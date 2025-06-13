@@ -2746,3 +2746,15 @@ a {
     margin-top: -15%;
   }
 }
+
+.clubs__first-block
+{
+  max-width: 45%;
+}
+
+@media (max-width: 768px) {
+  .clubs__first-block
+    {
+      max-width: 60%;
+    }
+}

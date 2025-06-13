@@ -123,9 +123,12 @@
             <hr id="line"/>
             <div class="clubs__main-block">
                 <div class="clubs__first-block">
-                    <p class="clubs__p">На базе воинских частей и соединений <br/>внутренних войск созданы и успешно
-                        <br/>функционируют
-                        <span>{{ clubs_count }} военно-патриотических клубов</span><br/>по всей стране.</p>
+                    <p class="clubs__p">
+                        На базе воинских частей и соединений внутренних войск созданы и успешно работают
+                        военно-патриотические клубы.
+                        <br>
+                        <span>На текущий момент по всей стране их насчитывается:  {{ clubs_count }}.</span>
+                    </p>
                 </div>
 
                 <div class="clubs__buttons">
@@ -154,6 +157,7 @@
                                 <a href="{% url 'app_club:club_info' club.id %}">
                                     <img class="slide-img2"
                                          src="
+
                                                  {% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
                                          alt="club"/>
                                     <p>Военно-патриотический <br/>клуб {{ club.name }}</p>
@@ -162,14 +166,15 @@
 
                         {% else %}
 
-                                <div class="swiper-slide swiper-slide2 clubs__card" data-region="{{ club.region.id }}">
+                            <div class="swiper-slide swiper-slide2 clubs__card" data-region="{{ club.region.id }}">
                                 <a href="{% url 'app_club:club_info' club.id %}">
                                     <img class="slide-img2"
-                                         src="{% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
+                                         src="
+                                                 {% if club.main_picture %}{{ club.main_picture.url }}{% else %}{% static 'img/club.png' %}{% endif %}"
                                          alt="club"/>
                                     <p>Военно-патриотический <br/>клуб {{ club.name }}</p>
                                 </a>
-                                </div>
+                            </div>
 
                         {% endif %}
 
